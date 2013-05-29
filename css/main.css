@@ -520,13 +520,14 @@ header {
 .search-prompt .prompt-text {
   line-height: 38px;
 }
-.search-box {
+.search-box-container {
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   border-bottom: solid 1px #a6a5a5;
+  position: relative;
 }
-.search-box input {
+.search-box-container input {
   background: url('../img/carot.png') no-repeat;
   background-position: 85% -2px;
   height: 38px;
@@ -535,6 +536,14 @@ header {
   font-size: 18px;
   border: 0px;
   padding: 0px;
+}
+.search-box-container .x-btn {
+  height: 38px;
+  width: 38px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background: url('../img/icon-x.png') center no-repeat #ff0000;
 }
 .quick-pick {
   position: fixed;
