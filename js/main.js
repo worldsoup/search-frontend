@@ -5,45 +5,47 @@ window.addEventListener("load",function() {
 		// Hide the address bar!
 		window.scrollTo(0, 1);
 	}, 0);
-});
+})
 
 
-$('#search-box') .focus(function(){
-	// $('.search-prompt') .hide()
-	// $('header') .hide()
-	$('header').animate({
+
+function showSearch(){
+	//implement search view when search is tapped
+	$('#search-box') .focus(function(){
+		$('header').animate({
+		//scroll the search field up
 		height: '20px',
+		//hide the excess
 		background: '#231f20',
 	}, 350, 'ease-out')
+	//hide the carot
 	$('#search-box').css('background', '#fff') 
+	//add the x button
 	$('.search-box-container').append('<div class="x-btn"></div>')
-
+	//add functionality to x button
+	$(document).on('tap', '.x-btn', function(e){
+		e.preventDefault();
+            $('#search-box').blur()
+	})
 }) 
+}
 
-// $('#search-box') .focus(function(){
-// 	// $('.search-prompt') .hide()
-// 	// $('header') .hide()
-// 	window.scrollTo(0, 3)
-// 	setTimeout(function(){
-// 		$('header').animate({
-// 			height: '0px',
-// 		}, 400, 'ease-out')
-// 	},30)
-// }) 
+
+function hideSearch(){
+//return to normal when search is closed
 $('#search-box') .blur(function(){
-	// $('.search-prompt') .hide()
-	// $('header') .hide()
 	$('header').animate({
 		height: '63px',
 		background: '#fff',
 	}, 350, 'ease-in')
 	var carotImg="../img/carot.png'"
 	$('#search-box').css('background', 'url('+ carotImg +') no-repeat') 
-	$('.x-btn').hide()
+	$('.x-btn').hide(function() {
+	})
 }) 
+}
 
 
-// $('#search-box') .blur(function(){
-// 	$('.search-prompt') .show() 
-// 	$('header') .show()  
-// })   
+$(showSearch);
+$(hideSearch);
+

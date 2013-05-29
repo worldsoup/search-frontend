@@ -33,15 +33,6 @@
       "initialSize" : 1155,
       "fileType" : 8192
     },
-    "\/tools\/mobile-bookmark-bubble\/example\/example.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/tools\/mobile-bookmark-bubble\/example\/example.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/tools\/mobile-bookmark-bubble\/bookmark_bubble.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -52,6 +43,15 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/tools\/mobile-bookmark-bubble\/bookmark_bubble.min.js",
       "fileType" : 64
+    },
+    "\/tools\/mobile-bookmark-bubble\/example\/example.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/tools\/mobile-bookmark-bubble\/example\/example.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/img\/startup\/startup-tablet-landscape.png" : {
       "ignoreWasSetByUser" : 0,
@@ -64,17 +64,6 @@
       "initialSize" : 3228,
       "fileType" : 8192
     },
-    "\/img\/icon-video.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/icon-video.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/icon-video.png",
-      "initialSize" : 1127,
-      "fileType" : 8192
-    },
     "\/js\/plugins.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -85,6 +74,17 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/plugins.min.js",
       "fileType" : 64
+    },
+    "\/img\/icon-video.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/icon-video.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/icon-video.png",
+      "initialSize" : 1127,
+      "fileType" : 8192
     },
     "\/img\/startup\/startup.png" : {
       "ignoreWasSetByUser" : 0,
@@ -172,6 +172,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
+    "\/js\/vendor\/modernizr-2.6.2.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/vendor\/modernizr-2.6.2.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/vendor\/modernizr-2.6.2.min.min.js",
+      "fileType" : 64
+    },
     "\/less\/custom.less" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -184,17 +195,6 @@
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/js\/vendor\/modernizr-2.6.2.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/vendor\/modernizr-2.6.2.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/vendor\/modernizr-2.6.2.min.min.js",
-      "fileType" : 64
     },
     "\/tools\/mobile-bookmark-bubble\/images\/icon_calendar.png" : {
       "ignoreWasSetByUser" : 0,
@@ -251,6 +251,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/startup\/startup-retina.png",
       "initialSize" : 1628,
+      "fileType" : 8192
+    },
+    "\/img\/icon-x.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/icon-x.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/icon-x.png",
+      "initialSize" : 1075,
       "fileType" : 8192
     },
     "\/img\/carot.png" : {
@@ -345,16 +356,14 @@
       "initialSize" : 1188,
       "fileType" : 8192
     },
-    "\/img\/icon-music.png" : {
+    "\/css\/normalize.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/icon-music.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/icon-music.png",
-      "initialSize" : 1075,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/css\/normalize.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/js\/main.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -367,14 +376,16 @@
       "outputAbbreviatedPath" : "\/js\/main.min.min.js",
       "fileType" : 64
     },
-    "\/css\/normalize.css" : {
+    "\/img\/icon-music.png" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/normalize.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/img\/icon-music.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/icon-music.png",
+      "initialSize" : 1075,
+      "fileType" : 8192
     },
     "\/img\/touch\/apple-touch-icon-57x57-precomposed.png" : {
       "ignoreWasSetByUser" : 0,
@@ -440,6 +451,15 @@
       "initialSize" : 1144,
       "fileType" : 8192
     },
+    "\/test.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/test.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/tools\/mobile-bookmark-bubble\/images\/close.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -450,15 +470,6 @@
       "outputAbbreviatedPath" : "\/tools\/mobile-bookmark-bubble\/images\/close.png",
       "initialSize" : 206,
       "fileType" : 8192
-    },
-    "\/test.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/test.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/less\/main.less" : {
       "ignoreWasSetByUser" : 0,
