@@ -43,15 +43,19 @@ $('#frmSearch').submit(function() {
 function showMoreResults(){
 	$.ajax({
 	    type: 'GET',
-	    url:"http://50.56.188.4:9200/appstore/_search?scroll=10m&size=3&scroll_id=" + curScrollId,
+	    url:"http://50.56.188.4:9200/_search/scroll?scroll=10m&size=3&scroll_id=" + curScrollId,
 	    success: function (data) {
 		   //console.log(JSON.stringify(data));
-		   dust.render("searchResult", JSON.parse(data), function(err, out) {
-	            	//console.log("out: " + out);
-	            	//console.log("err: " + err);
-	            	$("#searchResults").append(out);
-	        	});
-			ajaxOK = true;
+		   parsedData = JSON.parse(data);
+		   curHits = parsedData.hits.hits;
+           if (curHits.length > 0) {
+			   dust.render("searchResult", JSON.parse(data), function(err, out) {
+		            	//console.log("out: " + out);
+		            	//console.log("err: " + err);
+		            	$("#searchResults").append(out);
+		        	});
+				ajaxOK = true;
+			}
 	    },
 	    error: function(data){
 	    	console.log("Error occured: " + JSON.stringify(data));

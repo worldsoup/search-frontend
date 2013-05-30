@@ -1,1 +1,1 @@
-{#.}{#hits}{#hits}{#_source} <a href="{#appStores}{storeLink}{/appStores}">{appTitle}</a><br>{appFullDescription}<br><img src="{appImages[0]}" border=0 width="50px" /> <br><br> {/_source}{:else}<p>No results found.</p>{/hits}{/hits}{/.}
+{#.}{#hits}{#hits}{#_source} <a href="{#appStores}{Web}{/appStores}">{appTitle}</a><br>{appFullDescription}<br><img src="{appImages[0]}" border=0 width="50px" /> <br><br> {/_source}{:else}<p>No results found.</p>{/hits}{/hits}{/.}
