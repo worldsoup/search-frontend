@@ -38,8 +38,11 @@
         <span class="prompt-text">What type of app are you looking for?</span>
     </div>
     <div class="search-box-container">
-        <input id="search-box" type="search" placeholder="Search">
+        <form name="frmSearch" id="frmSearch" action="" method="">
+            <input id="searchKeyword" type="search" placeholder="Search">
+        </form>
     </div>
+    <div id="searchResults"></div>
 
     <div class="fill">
     </div>
@@ -54,9 +57,13 @@
         </ul>
     </nav>
 
-    <script src="js/vendor/zepto.min.js"></script>
+    <script src="js/vendor/zepto.min.js"></script>    
+    <script src="lib/dust/dist/dust-full-1.2.3.min.js"></script> 
+    <script src="js/jquery-zepto.js"></script>
     <script src="js/helper.js"></script>
     <script src="js/main.js"></script>
+    <script src="assets/templates/searchResult.js"></script>
+    <script src="js/search.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
