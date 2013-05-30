@@ -11,7 +11,7 @@ window.addEventListener("load",function() {
 
 function showSearch(){
 	//implement search view when search is tapped
-	$('#search-box') .focus(function(){
+	$('.search-box') .focus(function(){
 		$('header').animate({
 		//scroll the search field up
 		height: '20px',
@@ -19,13 +19,13 @@ function showSearch(){
 		background: '#231f20',
 	}, 350, 'ease-out')
 	//hide the carot
-	$('#search-box').css('background', '#fff') 
+	$('.search-box').css('background', '#fff') 
 	//add the x button
 	$('.search-box-container').append('<div class="x-btn"></div>')
 	//add functionality to x button
 	$(document).on('tap', '.x-btn', function(e){
 		e.preventDefault();
-            $('#search-box').blur()
+            $('.search-box').blur()
 	})
 }) 
 }
@@ -33,13 +33,13 @@ function showSearch(){
 
 function hideSearch(){
 //return to normal when search is closed
-$('#search-box') .blur(function(){
+$('.search-box') .blur(function(){
 	$('header').animate({
 		height: '63px',
 		background: '#fff',
 	}, 350, 'ease-in')
 	var carotImg="../img/carot.png'"
-	$('#search-box').css('background', 'url('+ carotImg +') no-repeat') 
+	$('.search-box').css('background', 'url('+ carotImg +') no-repeat') 
 	$('.x-btn').hide(function() {
 	})
 }) 
