@@ -3,7 +3,7 @@
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Mobozi -- Mobile Discovery Engine</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -31,7 +31,6 @@
 </head>
 <body>
 
-    <!-- Add your site or application content here -->
     <header>
     </header>
     <div class="search-prompt">
@@ -46,7 +45,12 @@
 
     <div class="fill">
     </div>
-    <nav class="quick-pick">
+    <div id="loader">
+        <span id="ball"></span>
+        <span id="loader-text">Loading</span>
+    </div>
+    <footer>
+    <!-- <nav class="quick-pick"> 
         <ul>
             <li class="icon-game">Games</li>
             <li class="icon-news">News</li>
@@ -55,23 +59,25 @@
             <li class="icon-navigation">Navigation</li>
 
         </ul>
-    </nav>
+    </nav> -->
+    <footer>
 
-    <script src="js/vendor/zepto.min.js"></script>    
-    <script src="lib/dust/dist/dust-full-1.2.3.min.js"></script> 
-    <script src="js/jquery-zepto.js"></script>
-    <script src="js/helper.js"></script>
-    <script src="js/main.js"></script>
-    <script src="assets/templates/searchResult.js"></script>
-    <script src="assets/templates/scrollSearchResult.js"></script>
-    <script src="js/search.js"></script>
+        <!--end page conent here -->
+        <script src="js/vendor/zepto.min.js"></script>    
+        <script src="lib/dust/dist/dust-full-1.2.3.min.js"></script> 
+        <script src="js/jquery-zepto.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/main.js"></script>
+        <script src="assets/templates/searchResult.js"></script>
+        <script src="assets/templates/scrollSearchResult.js"></script>
+        <script src="js/search.js"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-        g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-        s.parentNode.insertBefore(g,s)}(document,"script"));
-    </script>
-</body>
-</html>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+        var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+            g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+            s.parentNode.insertBefore(g,s)}(document,"script"));
+        </script>
+    </body>
+    </html>
