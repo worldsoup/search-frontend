@@ -1,0 +1,12 @@
+{#.}
+	{#hits}
+		{#hits}
+			{#_source} 
+				<div style="width: 500px;">
+					<img src="{appImages[0]}" border=0 width="100px" height="100px" /> &nbsp; <b><a href="{#appStores}{Web}{/appStores}">{appTitle}</a></b><br>{appFullDescription}<br>
+				</div>
+			{/_source} 
+			{:else}<p>No results found.</p>
+		{/hits}
+	{/hits}
+{/.}

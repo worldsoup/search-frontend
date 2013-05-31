@@ -1,1 +1,16 @@
-{#.}{#hits}{#hits}{#_source} <a href="{#appStores}{Web}{/appStores}">{appTitle}</a><br>{appFullDescription}<br><img src="{appImages[0]}" border=0 width="50px" /> <br><br> {/_source}{:else}<p>No results found.</p>{/hits}{/hits}{/.}
+{#.}
+	{#hits}
+		<div style="width: 500px;">
+			<img src="{hits[0]._source.appImages[0]}" border=0 width="100px" height="100px" /> &nbsp; <b><a href="{hits[0]._source.appStores.Web}">{hits[0]._source.appTitle}</a></b><br><br>{hits[0]._source.appFullDescription}<br>
+		</div>
+		<div style="width: 500px;">
+		    <div style="float: left; width: 250px;">
+				<img src="{hits[1]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[1]._source.appStores.Web}">{hits[1]._source.appTitle}</a></b><br><br>{hits[1]._source.appFullDescription}<br>
+			</div>
+		    <div style="float: left; width: 250px;">
+				<img src="{hits[2]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[2]._source.appStores.Web}">{hits[2]._source.appTitle}</a></b><br><br>{hits[2]._source.appFullDescription}<br>
+			</div>
+		</div>
+		<div style="clear:both;"></div><br>
+	{/hits}
+{/.}

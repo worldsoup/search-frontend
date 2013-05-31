@@ -26,12 +26,17 @@ $('#frmSearch').submit(function() {
 	       parsedData = JSON.parse(data);
 		   curScrollId = parsedData._scroll_id;	
 		   //console.log(JSON.stringify(data));
-		   dust.render("searchResult", JSON.parse(data), function(err, out) {
-	            	//console.log("out: " + out);
-	            	//console.log("err: " + err);
-	            	$("#searchResults").html(out);
-	        	});
-			ajaxOK = true;
+		   curHits = parsedData.hits.hits;
+           if (curHits.length > 0) {
+			   dust.render("searchResult", JSON.parse(data), function(err, out) {
+		            	//console.log("out: " + out);
+		            	//console.log("err: " + err);
+		            	$("#searchResults").html(out);
+		        	});
+				ajaxOK = true;
+			} else {
+				$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');			
+			}
 	    },
 	    error: function(data){
 	    	console.log("Error occured: " + JSON.stringify(data));
@@ -48,8 +53,9 @@ function showMoreResults(){
 		   //console.log(JSON.stringify(data));
 		   parsedData = JSON.parse(data);
 		   curHits = parsedData.hits.hits;
+		   //console.log(curHits.length);
            if (curHits.length > 0) {
-			   dust.render("searchResult", JSON.parse(data), function(err, out) {
+			   dust.render("scrollSearchResult", JSON.parse(data), function(err, out) {
 		            	//console.log("out: " + out);
 		            	//console.log("err: " + err);
 		            	$("#searchResults").append(out);
