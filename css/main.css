@@ -731,6 +731,10 @@ textarea[contenteditable] {
 .inline {
   display: inline-block;
 }
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
 .fill {
   background: url('../img/logo-shadow.png') no-repeat center center;
   height: 275px;
