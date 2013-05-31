@@ -1,13 +1,6 @@
 // scroll away address bar
-window.addEventListener("load",function() {
-	// Set a timeout...
-	setTimeout(function(){
-		// Hide the address bar!
-		window.scrollTo(0, 1);
-	}, 0);
-})
-
-
+MBP.hideUrlBarOnLoad();
+MBP.startupImage();
 
 function showSearch(){
 	//implement search view when search is tapped
@@ -44,13 +37,14 @@ $('.x-btn').hide(function() {
 })
 }
 
-$('.search-box') .blur(function(){
-	hideSearch()
-}) 
+// $('.search-box') .blur(function(){
+// 	hideSearch()
+// }) 
 
+// $('#frmSearch').submit(function(e){
+// 	hideSearch()
+// 	$(document.body).trigger('resultsServed')
+// })
 
-$('#frmSearch').submit(function(e){
-	hideSearch()
-})
 
 

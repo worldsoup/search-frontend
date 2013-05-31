@@ -36,6 +36,10 @@ $('#frmSearch').submit(function() {
 		            	var pageHeight = $(window).height()
 		            	var container = $('.results-container')
 		            	container.css('height', pageHeight)
+		            	//hide the prompt if results are served
+		            	$('.search-prompt').animate({
+		            		height: '0px',
+		            	}, 350, 'ease-out')
 		            });
 		   	ajaxOK = true;
 		   } else {

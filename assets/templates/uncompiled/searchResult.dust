@@ -1,16 +1,26 @@
 {#.}
-	{#hits}
-		<div style="width: 300px;">
-			<img src="{hits[0]._source.appImages[0]}" border=0 width="100px" height="100px" /> &nbsp; <b><a href="{hits[0]._source.appStores[0].Web}">{hits[0]._source.appTitle}</a></b><br><br>{hits[0]._source.appFullDescription}<br>
+{#hits}
+<div class="results-container">
+	<div class="top-result">
+		<a href="{hits[0]._source.appStores[0].Web}">
+			<img src="{hits[0]._source.appImages[0]}" height="100" />
+			<h1>
+				{hits[0]._source.appTitle}
+			</h1>
+			<p>{hits[0]._source.appFullDescription}</p>
+		</a>
+	</div>
+	<div class="secondary-results">
+		<div class="result-2">
+			<img src="{hits[1]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[1]._source.appStores[0].Web}">{hits[1]._source.appTitle}</a></b><br><br>{hits[1]._source.appFullDescription}<br>
 		</div>
-		<div style="width: 300px;">
-		    <div style="float: left; width: 150px;">
-				<img src="{hits[1]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[1]._source.appStores[0].Web}">{hits[1]._source.appTitle}</a></b><br><br>{hits[1]._source.appFullDescription}<br>
-			</div>
-		    <div style="float: left; width: 150px;">
-				<img src="{hits[2]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[2]._source.appStores[0].Web}">{hits[2]._source.appTitle}</a></b><br><br>{hits[2]._source.appFullDescription}<br>
-			</div>
+		<div class="divider"></div>
+		<div class="result-3">
+			<img src="{hits[2]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[2]._source.appStores[0].Web}">{hits[2]._source.appTitle}</a></b><br><br>{hits[2]._source.appFullDescription}<br>
 		</div>
-		<div style="clear:both;"></div><br>
-	{/hits}
+	</div>
+	<div style="clear:both;"></div><br>
+</div>
+
+{/hits}
 {/.}

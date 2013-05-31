@@ -825,3 +825,18 @@ header {
   margin: 0px 0px 0px 6px;
   vertical-align: top;
 }
+.results-container .secondary-results {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #231f20;
+  float: left;
+  overflow: hidden;
+}
+.results-container .secondary-results .result-2,
+.results-container .secondary-results .result-3 {
+  text-align: center;
+  width: 47%;
+  padding: 1%;
+  display: inline-block;
+  float: left;
+}
