@@ -504,7 +504,7 @@ textarea[contenteditable] {
 }
 #floatingBarsG {
   position: fixed;
-  top: 50%;
+  bottom: 6%;
   left: 50%;
   margin-left: -31px;
   width: 62px;
