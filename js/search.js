@@ -5,7 +5,7 @@ var container = $('.results-container');
 
 $('#frmSearch').submit(function() {
 	//hide keyboard
-    $('.search-box').blur();
+  
 	$.ajax({
 		type: 'POST',
 		url:"http://50.56.188.4:9200/appstore/_search?scroll=10m&size=3",

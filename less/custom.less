@@ -1,6 +1,6 @@
 .fill{
 	background: url('../img/logo-shadow.png') no-repeat center center;
-	height: 275px;
+	height: 100%;
 }
 header{
 	height: 63px;
@@ -136,18 +136,30 @@ header{
 
 	.secondary-results{
 		width:100%;
+		height: 11.5em;
 		position:relative;
-		width: 100%;
 		border-top: 1px solid @black;
 		float: left;
 		overflow:hidden;
+		.divider{
+			height: 100%;
+			width: 1px;
+			background: @black;
+			float: left;
+			display: inline-block;
+		}
+		.result-2{
+
+		}
 		.result-2, .result-3{
 			text-align: center;
 			width: 47%;
 			padding: 1%;
 			display: inline-block;
 			float: left;
-
+			h3, p{
+				margin: 5px 0px;
+			}
 
 		}
 		.result-3{
