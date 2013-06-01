@@ -11,7 +11,7 @@ $('#frmSearch').submit(function() {
 							"query" : {
 							"multi_match" : {
 							"query" : $('#searchKeyword').val(),
-							"fields" : [ "appCategory^2", "appTitle^3", "appDescription","appFullDescription" ]
+							"fields" : [ "appCategory^2", "appDescription","appFullDescription","appTitle" ]
 							}
 							}
 							}),	
