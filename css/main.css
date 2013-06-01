@@ -863,3 +863,18 @@ header {
 .results-container .secondary-results .result-3 p {
   margin: 5px 0px;
 }
+.results-list {
+  height: 120px;
+}
+.results-list img {
+  width: 75px;
+}
+.results-list h4 {
+  vertical-align: top;
+}
+.results-list p {
+  margin: 5px 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

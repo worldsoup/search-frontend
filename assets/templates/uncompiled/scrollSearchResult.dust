@@ -2,8 +2,11 @@
 	{#hits}
 		{#hits}
 			{#_source} 
-				<div style="width: 300px;">
-					<img src="{appImages[0]}" border=0 width="100px" height="100px" /> &nbsp; <b><a href="{#appStores}{Web}{/appStores}">{appTitle}</a></b><br>{appFullDescription}<br>
+				<div class="results-list">
+					<img class="inline" src="{appImages[0]}"/>
+					<h4 class="inline" href="{#appStores}{Web}{/appStores}">{appTitle}</a></h4>
+					<p>{appFullDescription}</p>
+					<hr>
 				</div>
 			{/_source} 
 			{:else}<p>No results found.</p>
