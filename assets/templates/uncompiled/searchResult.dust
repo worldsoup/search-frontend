@@ -7,16 +7,16 @@
 			<h1>
 				{hits[0]._source.appTitle}
 			</h1>
-			<p>{hits[0]._source.appFullDescription}</p>
+			<p class="result-description">{hits[0]._source.appFullDescription}</p>
 		</a>
 	</div>
 	<div class="secondary-results">
 		<div class="result-2">
-			<img src="{hits[1]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[1]._source.appStores[0].Web}">{hits[1]._source.appTitle}</a></b><br><br>{hits[1]._source.appFullDescription}<br>
+			<img src="{hits[1]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[1]._source.appStores[0].Web}">{hits[1]._source.appTitle}</a></b><br><p class="result-description">{hits[1]._source.appFullDescription}</p>  
 		</div>
 		<div class="divider"></div>
 		<div class="result-3">
-			<img src="{hits[2]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[2]._source.appStores[0].Web}">{hits[2]._source.appTitle}</a></b><br><br>{hits[2]._source.appFullDescription}<br>
+			<img src="{hits[2]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b><a href="{hits[2]._source.appStores[0].Web}">{hits[2]._source.appTitle}</a></b><br><p class="result-description">{hits[2]._source.appFullDescription}</p>
 		</div>
 	</div>
 	<div style="clear:both;"></div><br>

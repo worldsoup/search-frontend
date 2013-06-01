@@ -18,7 +18,10 @@ function showSearch(){
 	//add functionality to x button
 	$(document).on('tap', '.x-btn', function(e){
 		e.preventDefault();
-		$('.search-box').blur()
+		//this will hide the keyboard
+		// $('.search-box').blur()
+		//clear the form
+		$('.search-box').val('')
 	})
 }
 
@@ -38,14 +41,9 @@ $('.x-btn').hide(function() {
 })
 }
 
-$('.search-box') .blur(function(){
-	hideSearch()
-}) 
-
-// $('#frmSearch').submit(function(e){
+// $('.search-box') .blur(function(){
 // 	hideSearch()
-// 	$(document.body).trigger('resultsServed')
-// })
+// }) 
 
 
 
