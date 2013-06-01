@@ -1,27 +1,20 @@
 var ajaxOK = false;
 var curScrollId = 0;
+var pageHeight = $(window).height();
+var container = $('.results-container');
 
 $('#frmSearch').submit(function() {
 	$.ajax({
 		type: 'POST',
 		url:"http://50.56.188.4:9200/appstore/_search?scroll=10m&size=3",
-		data: JSON.stringify({"query":
-			{"bool":
-			{"must":
-			[{"query_string":
-			{
-				"default_field":"_all",
-				"query": $('#searchKeyword').val()
-			}
-		}],
-		"must_not":[],
-		"should":[]
-	}
-},
-"from":0,
-"sort":[],
-"facets":{}
-}),
+		data: JSON.stringify({
+							"query" : {
+							"multi_match" : {
+							"query" : $('#searchKeyword').val(),
+							"fields" : [ "appCategory^2", "appTitle^3", "appDescription","appFullDescription" ]
+							}
+							}
+							}),	
 		success: function (data) {
 			parsedData = JSON.parse(data);
 			curScrollId = parsedData._scroll_id;	
@@ -33,13 +26,11 @@ $('#frmSearch').submit(function() {
 		            	//console.log("err: " + err);
 		            	$("#searchResults").html(out);
 		            	//size the first results container
-		            	var pageHeight = $(window).height()
-		            	var container = $('.results-container')
-		            	container.css('height', pageHeight)
+		            	container.css('height', pageHeight);
 		            	//hide the prompt if results are served
 		            	$('.search-prompt').animate({
-		            		height: '0px',
-		            	}, 350, 'ease-out')
+			            		height: '0px',
+			            	}, 350, 'ease-out');
 		            });
 		   	ajaxOK = true;
 		   } else {
@@ -54,6 +45,7 @@ return false;
 });
 
 function showMoreResults(){
+	$('#loader').show();
 	$.ajax({
 		type: 'GET',
 		url:"http://50.56.188.4:9200/_search/scroll?scroll=10m&size=3&scroll_id=" + curScrollId,
@@ -63,13 +55,14 @@ function showMoreResults(){
 		   curHits = parsedData.hits.hits;
 		   //console.log(curHits.length);
 		   if (curHits.length > 0) {
-		   	dust.render("scrollSearchResult", JSON.parse(data), function(err, out) {
+		   		dust.render("scrollSearchResult", JSON.parse(data), function(err, out) {
 		            	//console.log("out: " + out);
-		            	//console.log("err: " + err);
+		            	//console.log("err: " + err);		            	
 		            	$("#searchResults").append(out);
-		            });
-		   	ajaxOK = true;
+		         });
+		   	     ajaxOK = true;
 		   }
+		   $('#loader').hide();
 		},
 		error: function(data){
 			console.log("Error occured: " + JSON.stringify(data));
