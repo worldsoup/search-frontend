@@ -792,7 +792,6 @@ header {
 .results-container .top-result {
   text-align: left;
   padding: 10px;
-  border-bottom: 1px solid #231f20;
   position: relative;
   height: 11.3em;
   overflow: hidden;
@@ -836,9 +835,10 @@ header {
 }
 .results-container .secondary-results {
   width: 100%;
-  height: 11.5em;
+  height: 12em;
   position: relative;
   border-top: 1px solid #231f20;
+  border-bottom: 1px solid #231f20;
   float: left;
   overflow: hidden;
 }
@@ -856,12 +856,42 @@ header {
   padding: 1%;
   display: inline-block;
   float: left;
+  font-size: .95em;
+  line-height: 1;
 }
 .results-container .secondary-results .result-2 h3,
 .results-container .secondary-results .result-3 h3,
 .results-container .secondary-results .result-2 p,
 .results-container .secondary-results .result-3 p {
   margin: 5px 0px;
+}
+.results-container .secondary-results .result-2 p:after,
+.results-container .secondary-results .result-3 p:after {
+  content: ' ';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1em;
+  bottom: 0px;
+  left: 0px;
+}
+.results-container .secondary-results .result-2 p:before,
+.results-container .secondary-results .result-3 p:before {
+  content: '...';
+  text-align: right;
+  position: absolute;
+  display: block;
+  width: 2em;
+  height: 1em;
+  bottom: 0em;
+  right: 10px;
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 38%, #ffffff 99%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(38%, #ffffff), color-stop(99%, #ffffff));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 38%, #ffffff 99%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 38%, #ffffff 99%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 38%, #ffffff 99%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 38%, #ffffff 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0e0e0', endColorstr='#e0e0e0', GradientType=1);
 }
 .results-list {
   height: 120px;
@@ -877,4 +907,6 @@ header {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: .95em;
+  line-height: 1;
 }
