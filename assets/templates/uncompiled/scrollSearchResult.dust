@@ -3,9 +3,11 @@
 		{#hits}
 			{#_source} 
 				<div class="results-list">
+				  <a href="{#appStores}{Web}{/appStores}">
 					<img class="inline" src="{appImages[0]}"/>
-					<h4 class="inline"><a href="{#appStores}{Web}{/appStores}">{appTitle}</a></h4>
+					<h4 class="inline">{appTitle}</h4>
 					<p>{appDescription}{^appDescription} {appFullDescription} {/appDescription}</p>
+				  </a>
 					<hr>
 				</div>
 			{/_source} 

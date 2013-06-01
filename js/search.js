@@ -49,7 +49,7 @@ return false;
 });
 
 function showMoreResults(){
-	$('#loader').show();
+	$('#floatingBarsG').show();
 	$.ajax({
 		type: 'GET',
 		url:"http://50.56.188.4:9200/_search/scroll?scroll=10m&size=3&scroll_id=" + curScrollId,
@@ -66,7 +66,7 @@ function showMoreResults(){
 		         });
 		   	     ajaxOK = true;
 		   }
-		   $('#loader').hide();
+		   $('#floatingBarsG').hide();
 		},
 		error: function(data){
 			console.log("Error occured: " + JSON.stringify(data));
