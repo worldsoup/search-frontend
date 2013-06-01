@@ -12,6 +12,7 @@ function showSearch(){
 	}, 350, 'ease-out')
 	//hide the carot
 	$('.search-box').css('background', '#fff') 
+	$('.search-box').prop('placeholder', '') 
 	//add the x button
 	$('.search-box-container').append('<div class="x-btn"></div>')
 	//add functionality to x button
@@ -37,9 +38,9 @@ $('.x-btn').hide(function() {
 })
 }
 
-// $('.search-box') .blur(function(){
-// 	hideSearch()
-// }) 
+$('.search-box') .blur(function(){
+	hideSearch()
+}) 
 
 // $('#frmSearch').submit(function(e){
 // 	hideSearch()
