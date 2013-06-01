@@ -4,6 +4,8 @@ var pageHeight = $(window).height();
 var container = $('.results-container');
 
 $('#frmSearch').submit(function() {
+	//hide keyboard
+    $('.search-box').blur();
 	$.ajax({
 		type: 'POST',
 		url:"http://50.56.188.4:9200/appstore/_search?scroll=10m&size=3",
@@ -11,7 +13,7 @@ $('#frmSearch').submit(function() {
 							"query" : {
 							"multi_match" : {
 							"query" : $('#searchKeyword').val(),
-							"fields" : [ "appCategory^2", "appDescription","appFullDescription","appTitle" ]
+							"fields" : [ "appCategory^3", "appDescription^2","appFullDescription^2","appTitle" ]
 							}
 							}
 							}),	
