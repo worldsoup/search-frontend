@@ -4,8 +4,8 @@
 			{#_source} 
 				<div class="results-list">
 					<img class="inline" src="{appImages[0]}"/>
-					<h4 class="inline" href="{#appStores}{Web}{/appStores}">{appTitle}</a></h4>
-					<p>{appFullDescription}</p>
+					<h4 class="inline"><a href="{#appStores}{Web}{/appStores}">{appTitle}</a></h4>
+					<p>{appDescription}{^appDescription} {appFullDescription} {/appDescription}</p>
 					<hr>
 				</div>
 			{/_source} 

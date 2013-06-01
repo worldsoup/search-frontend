@@ -4,8 +4,6 @@ var pageHeight = $(window).height();
 var container = $('.results-container');
 
 $('#frmSearch').submit(function() {
-	//hide keyboard
-  
 	$.ajax({
 		type: 'POST',
 		url:"http://50.56.188.4:9200/appstore/_search?scroll=10m&size=3",
@@ -34,9 +32,13 @@ $('#frmSearch').submit(function() {
 			            		height: '0px',
 			            	}, 350, 'ease-out');
 		            });
-		   	ajaxOK = true;
+		   	 ajaxOK = true;
+		   	 //hide keyboard
+             $('.search-box').blur();
 		   } else {
-		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');			
+		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
+		   	//hide keyboard
+            $('.search-box').blur();			
 		   }
 		},
 		error: function(data){
