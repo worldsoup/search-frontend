@@ -10,19 +10,23 @@
 			<p class="result-description">{hits[0]._source.appDescription}{^hits[0]._source.appDescription} {hits[0]._source.appFullDescription} {/hits[0]._source.appDescription}</p>
 		</div>
 	</a>
-	<div class="secondary-results">
-		<div class="result-2">
-			<a href="{hits[1]._source.appStores[0].Web}">
-				<img src="{hits[1]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b>{hits[1]._source.appTitle}</b><br><p class="result-description">{hits[1]._source.appDescription}{^hits[1]._source.appDescription} {hits[1]._source.appFullDescription} {/hits[1]._source.appDescription}</p> 
-			</a> 
+	{?hits[1]._source.appTitle}
+		<div class="secondary-results">
+			<div class="result-2">
+				<a href="{hits[1]._source.appStores[0].Web}">
+					<img src="{hits[1]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b>{hits[1]._source.appTitle}</b><br><p class="result-description">{hits[1]._source.appDescription}{^hits[1]._source.appDescription} {hits[1]._source.appFullDescription} {/hits[1]._source.appDescription}</p> 
+				</a> 
+			</div>
+			{?hits[2]._source.appTitle}
+				<div class="divider"></div>
+				<div class="result-3">
+					<a href="{hits[2]._source.appStores[0].Web}">
+						<img src="{hits[2]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b>{hits[2]._source.appTitle}</b><br><p class="result-description">{hits[2]._source.appDescription}{^hits[2]._source.appDescription} {hits[2]._source.appFullDescription} {/hits[2]._source.appDescription}</p>
+					</a>
+				</div>
+			{/hits[2]._source.appTitle}
 		</div>
-		<div class="divider"></div>
-		<div class="result-3">
-			<a href="{hits[2]._source.appStores[0].Web}">
-				<img src="{hits[2]._source.appImages[0]}" border=0 width="100px" height="100px" /> <br> <b>{hits[2]._source.appTitle}</b><br><p class="result-description">{hits[2]._source.appDescription}{^hits[2]._source.appDescription} {hits[2]._source.appFullDescription} {/hits[2]._source.appDescription}</p>
-			</a>
-		</div>
-	</div>
+	{/hits[1]._source.appTitle}
 	<div style="clear:both;"></div><br>
 </div>
 

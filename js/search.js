@@ -53,7 +53,7 @@ function showMoreResults(){
 	$('#floatingBarsG').show();
 	$.ajax({
 		type: 'GET',
-		url:"http://50.56.188.4:9200/_search/scroll?scroll=10m&size=3&scroll_id=" + curScrollId,
+		url:"http://50.56.188.4:9200/_search/scroll?scroll=10m&size=4&scroll_id=" + curScrollId,
 		success: function (data) {
 		   //console.log(JSON.stringify(data));
 		   parsedData = JSON.parse(data);
@@ -75,13 +75,22 @@ function showMoreResults(){
 	});
 }
 
+/*
+$('#searchResults').swipeUp(function(){
+    if (ajaxOK === true) {
+		ajaxOK = false;
+		showMoreResults();
+	}
+})
+*/
+
 //Infinite Scroll
 $(window).bind('scroll', function () {	
-		//check if the user has scrolled within 200px of the bottom of the page
-		if ($(this).scrollTop() + $(this).height() >= ($(document).height() - 600)) {
+		//check if the user has scrolled within 650px of the bottom of the page
+		if ($(this).scrollTop() + $(this).height() >= ($(document).height() - 650)) {
 			if (ajaxOK === true) {
 				ajaxOK = false;
-				//loading more items because the user is within 600px of the bottom of the page
+				//loading more items because the user is within 650px of the bottom of the page
 				showMoreResults();
 			}
 		}
