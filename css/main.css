@@ -918,10 +918,21 @@ header {
 .results-list hr {
   margin: 8px 0 3px 0;
 }
+.beta-form-container {
+  height: 78px;
+}
+.beta-form-container input {
+  display: inline-block;
+  width: 130px;
+  height: 22px;
+}
 .beta-form-container .beta-button {
-  padding: 10px 15px;
+  height: 36px;
+  width: 300px;
   background: #f04929;
   font-weight: bold;
   display: inline;
   color: #fff;
+  margin-top: 10px;
+  border: 0px;
 }
