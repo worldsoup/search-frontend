@@ -31,6 +31,7 @@ $('#frmSearch').submit(function() {
 		            	$('.search-prompt').animate({
 			            		height: '0px',
 			            	}, 350, 'ease-out');
+		            	window.scrollTo(1, 0);
 		            });
 		   	 ajaxOK = true;
 		   	 //hide keyboard
@@ -109,7 +110,7 @@ return false;
 });
 
 $(function() {
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+	if( /Android|webOS|windows phone|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 	  checkCookie();
 	} else {
 		$('#partiallogin').hide();   
