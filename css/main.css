@@ -817,7 +817,7 @@ header {
   left: 0px;
 }
 .results-container .top-result .result-description:before {
-  content: '...';
+  content: '';
   text-align: right;
   position: absolute;
   display: block;
@@ -877,7 +877,7 @@ header {
 }
 .results-container .secondary-results .result-2 p:before,
 .results-container .secondary-results .result-3 p:before {
-  content: '...';
+  content: '';
   text-align: right;
   position: absolute;
   display: block;
@@ -894,19 +894,27 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0e0e0', endColorstr='#e0e0e0', GradientType=1);
 }
 .results-list {
-  height: 120px;
+  height: 116px;
+}
+.results-list a {
+  text-decoration: none;
+  color: #231f20;
 }
 .results-list img {
   width: 75px;
 }
 .results-list h4 {
+  margin: 6px 3px;
   vertical-align: top;
 }
 .results-list p {
-  margin: 5px 7px;
+  margin: 2px 7px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: .95em;
   line-height: 1;
+}
+.results-list hr {
+  margin: 8px 0 3px 0;
 }

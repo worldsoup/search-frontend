@@ -46,4 +46,7 @@ $('.x-btn').hide(function() {
 // }) 
 
 
+//make fill stretch to botoom
+$('.fill').css('height', pageHeight - 140)
+
 
