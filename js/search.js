@@ -85,3 +85,24 @@ $(window).bind('scroll', function () {
 			}
 		}
 	});
+
+$('#frmLogin').submit(function() {
+	$.ajax({
+		type: 'POST',
+		url:"//api.mobozi.com/v1/searchlogin",
+		data: $('form').serialize(),	
+			    success: function(data) { 
+			        serverdata = JSON.parse(data);
+			        if (serverdata.status == 201){
+						$('#partiallogin').hide();   
+						$('#partialSearch').show();       
+				     } else {
+				        $('#errormessage').html('<font color="red">' + serverdata.error + '</font>') 		          
+				    }                       
+			    },
+				error: function(jqXHR, textStatus, errorThrown){
+				        $('#errormessage').html('<font color="red"> Error: ' + textStatus + '</font>') 
+				}
+	});
+return false;
+});

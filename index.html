@@ -33,15 +33,25 @@
 
     <header>
     </header>
-    <div class="search-prompt">
-        <span class="prompt-text">What type of app are you looking for?</span>
-    </div>
-    <div class="search-box-container">
-        <form name="frmSearch" id="frmSearch" action="" method="">
-            <input class="search-box" id="searchKeyword" type="search" placeholder="Search">
+    <div  align="center" id="partiallogin">
+        <form name="frmLogin" id="frmLogin" method="post" action="">
+            <input name="myemail" type="email" id="myemail" placeholder="email"><br><br>
+            <input name="mypassword" type="password" id="mypassword" placeholder="access code"><br><br>
+            <div id="errormessage"></div>
+            <input type="submit" name="Submit" value="Try Mobozi !!">
         </form>
     </div>
-    <div id="searchResults"></div>
+    <div id="partialSearch"  style="display:none;">
+        <div class="search-prompt">
+            <span class="prompt-text">What type of app are you looking for?</span>
+        </div>
+        <div class="search-box-container">
+            <form name="frmSearch" id="frmSearch" action="" method="">
+                <input class="search-box" id="searchKeyword" type="search" placeholder="Search">
+            </form>
+        </div>
+        <div id="searchResults"></div>
+    </div>
 
     <div style="display:none;" id="floatingBarsG">
         <div class="blockG" id="rotateG_01">
