@@ -109,7 +109,12 @@ return false;
 });
 
 $(function() {
-    checkCookie();
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+	  checkCookie();
+	} else {
+		$('#partiallogin').hide();   
+		$('#partialNonMobile').show();
+	}    
 });
 
 function setCookie(c_name,value,exdays)
