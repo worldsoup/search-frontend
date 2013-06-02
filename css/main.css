@@ -918,3 +918,10 @@ header {
 .results-list hr {
   margin: 8px 0 3px 0;
 }
+.beta-form-container .beta-button {
+  padding: 10px 15px;
+  background: #f04929;
+  font-weight: bold;
+  display: inline;
+  color: #fff;
+}
