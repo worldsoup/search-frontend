@@ -26,6 +26,8 @@ $('#frmSearch').submit(function() {
 		            	$("#searchResults").html(out);
 		            	//first results stretch to bottom of screen
 						$('.results-container').css('height', pageHeight)
+						//remove .fill when results are returned
+						$('.fill').hide()
 		            	//hide the prompt if results are served
 		            	$('.search-prompt').animate({
 			            		height: '0px',

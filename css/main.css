@@ -699,7 +699,12 @@ textarea[contenteditable] {
   }
 }
 .inline {
-  display: inline-block;
+  display: inline;
+}
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -896,6 +901,7 @@ header {
 }
 .results-list {
   height: 116px;
+  position: relative;
 }
 .results-list a {
   text-decoration: none;
@@ -907,6 +913,9 @@ header {
 .results-list h4 {
   margin: 6px 3px;
   vertical-align: top;
+  top: 0px;
+  left: 74px;
+  position: absolute;
 }
 .results-list p {
   margin: 2px 7px;
