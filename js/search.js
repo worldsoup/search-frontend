@@ -24,6 +24,7 @@ $('#frmSearch').submit(function() {
 		            	//console.log("out: " + out);
 		            	//console.log("err: " + err);
 		            	$("#searchResults").html(out);
+		            	$("#searchResults").show();
 		            	//first results stretch to bottom of screen
 						$('.results-container').css('height', pageHeight)
 						//remove .fill when results are returned
@@ -64,6 +65,7 @@ function showMoreResults(){
 		            	//console.log("out: " + out);
 		            	//console.log("err: " + err);		            	
 		            	$("#scrollSearchResults").append(out);
+		            	$("#scrollSearchResults").show();
 		         });
 		   	     ajaxOK = true;
 		   }
