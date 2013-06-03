@@ -930,6 +930,7 @@ header {
 }
 .beta-form-container {
   height: 78px;
+  margin-top: 20px;
 }
 .beta-form-container input {
   display: inline-block;
