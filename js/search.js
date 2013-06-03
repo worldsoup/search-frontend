@@ -1,7 +1,6 @@
 var ajaxOK = false;
 var curScrollId = 0;
 var pageHeight = $(window).height();
-var container = $('.results-container');
 
 $('#frmSearch').submit(function() {
 	$.ajax({
@@ -25,8 +24,8 @@ $('#frmSearch').submit(function() {
 		            	//console.log("out: " + out);
 		            	//console.log("err: " + err);
 		            	$("#searchResults").html(out);
-		            	//size the first results container
-		            	container.css('height', pageHeight);
+		            	//first results stretch to bottom of screen
+						$('.results-container').css('height', pageHeight)
 		            	//hide the prompt if results are served
 		            	$('.search-prompt').animate({
 			            		height: '0px',
