@@ -29,9 +29,8 @@ $('#frmSearch').submit(function() {
 						//remove .fill when results are returned
 						$('.fill').hide()
 		            	//hide the prompt if results are served
-		            	$('.search-prompt').animate({
-			            		height: '0px',
-			            	}, 350, 'ease-out');
+		            	$('.search-prompt').hide()
+		            	$('header').hide()
 		            	window.scrollTo(1, 0);
 		            });
 		   	 ajaxOK = true;

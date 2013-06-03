@@ -798,7 +798,7 @@ header {
   text-align: left;
   padding: 10px;
   position: relative;
-  height: 11.3em;
+  height: 50%;
   overflow: hidden;
 }
 .results-container .top-result h1 {
@@ -841,7 +841,7 @@ header {
 }
 .results-container .secondary-results {
   width: 100%;
-  height: 12em;
+  height: 50%;
   position: relative;
   border-top: 1px solid #231f20;
   border-bottom: 1px solid #231f20;

@@ -4,14 +4,10 @@ MBP.startupImage();
 
 function showSearch(){
 	//implement search view when search is tapped
-	$('header').animate({
-		//scroll the search field up
-		height: '20px',
-		//hide the excess
-		background: '#231f20',
-	}, 350, 'ease-out')
+	setTimeout(function(){window.scrollTo(0,63)},100);
 	//hide the carot
 	$('.search-box').css('background', '#fff') 
+	//hide placeholder text
 	$('.search-box').prop('placeholder', '') 
 	//add the x button
 	$('.search-box-container').append('<div class="x-btn"></div>')
@@ -34,7 +30,7 @@ function hideSearch(){
 $('header').animate({
 	height: '63px',
 	background: '#fff',
-}, 350, 'ease-in')
+}, 250, 'ease-in')
 var carotImg="../img/carot.png'"
 $('.search-box').css('background', 'url('+ carotImg +') no-repeat') 
 $('.x-btn').hide(function() {
@@ -47,7 +43,7 @@ $('.x-btn').hide(function() {
 
 
 //make fill stretch to botoom
-$('.fill').css('height', pageHeight - 80)
+$('.fill').css('height', pageHeight - 17)
 
 
 
