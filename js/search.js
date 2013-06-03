@@ -63,7 +63,7 @@ function showMoreResults(){
 		   		dust.render("scrollSearchResult", JSON.parse(data), function(err, out) {
 		            	//console.log("out: " + out);
 		            	//console.log("err: " + err);		            	
-		            	$("#searchResults").append(out);
+		            	$("#scrollSearchResults").append(out);
 		         });
 		   	     ajaxOK = true;
 		   }
