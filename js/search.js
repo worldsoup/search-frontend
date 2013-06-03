@@ -5,7 +5,7 @@ var pageHeight = $(window).height();
 $('#frmSearch').submit(function() {
 	$.ajax({
 		type: 'POST',
-		url:"http://50.56.188.4:9200/appstore/_search?scroll=10m&size=3",
+		url:"http://50.56.206.133:9200/appstore/_search?scroll=10m&size=3",
 		data: JSON.stringify({
 							"query" : {
 							"multi_match" : {
@@ -53,7 +53,7 @@ function showMoreResults(){
 	$('#floatingBarsG').show();
 	$.ajax({
 		type: 'GET',
-		url:"http://50.56.188.4:9200/_search/scroll?scroll=10m&size=4&scroll_id=" + curScrollId,
+		url:"http://50.56.206.133:9200/_search/scroll?scroll=10m&size=4&scroll_id=" + curScrollId,
 		success: function (data) {
 		   //console.log(JSON.stringify(data));
 		   parsedData = JSON.parse(data);
