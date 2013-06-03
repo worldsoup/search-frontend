@@ -502,15 +502,23 @@ textarea[contenteditable] {
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   /* Style adjustments for viewports that meet the condition */
 }
-#floatingBarsG {
+.spinner-container {
+  display: block;
+  background: #fff;
   position: fixed;
-  bottom: 6%;
+  bottom: 0px;
+  height: 80px;
+  width: 1000px;
+}
+.spinner-container #floatingBarsG {
+  position: fixed;
+  bottom: 0px;
   left: 50%;
   margin-left: -31px;
   width: 62px;
   height: 77px;
 }
-.blockG {
+.spinner-container .blockG {
   position: absolute;
   background-color: #C2BEC2;
   width: 10px;
@@ -546,7 +554,7 @@ textarea[contenteditable] {
   animation-iteration-count: infinite;
   animation-direction: linear;
 }
-#rotateG_01 {
+.spinner-container #rotateG_01 {
   left: 0;
   top: 28px;
   -moz-animation-delay: 0.39s;
@@ -560,7 +568,7 @@ textarea[contenteditable] {
   animation-delay: 0.39s;
   transform: rotate(-90deg);
 }
-#rotateG_02 {
+.spinner-container #rotateG_02 {
   left: 8px;
   top: 10px;
   -moz-animation-delay: 0.52s;
@@ -574,7 +582,7 @@ textarea[contenteditable] {
   animation-delay: 0.52s;
   transform: rotate(-45deg);
 }
-#rotateG_03 {
+.spinner-container #rotateG_03 {
   left: 26px;
   top: 3px;
   -moz-animation-delay: 0.65s;
@@ -588,7 +596,7 @@ textarea[contenteditable] {
   animation-delay: 0.65s;
   transform: rotate(0deg);
 }
-#rotateG_04 {
+.spinner-container #rotateG_04 {
   right: 8px;
   top: 10px;
   -moz-animation-delay: 0.78s;
@@ -602,7 +610,7 @@ textarea[contenteditable] {
   animation-delay: 0.78s;
   transform: rotate(45deg);
 }
-#rotateG_05 {
+.spinner-container #rotateG_05 {
   right: 0;
   top: 28px;
   -moz-animation-delay: 0.9099999999999999s;
@@ -616,7 +624,7 @@ textarea[contenteditable] {
   animation-delay: 0.9099999999999999s;
   transform: rotate(90deg);
 }
-#rotateG_06 {
+.spinner-container #rotateG_06 {
   right: 8px;
   bottom: 7px;
   -moz-animation-delay: 1.04s;
@@ -630,7 +638,7 @@ textarea[contenteditable] {
   animation-delay: 1.04s;
   transform: rotate(135deg);
 }
-#rotateG_07 {
+.spinner-container #rotateG_07 {
   bottom: 0;
   left: 26px;
   -moz-animation-delay: 1.1700000000000002s;
@@ -644,7 +652,7 @@ textarea[contenteditable] {
   animation-delay: 1.1700000000000002s;
   transform: rotate(180deg);
 }
-#rotateG_08 {
+.spinner-container #rotateG_08 {
   left: 8px;
   bottom: 7px;
   -moz-animation-delay: 1.3s;
