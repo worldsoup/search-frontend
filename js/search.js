@@ -51,7 +51,7 @@ return false;
 });
 
 function showMoreResults(){
-	$('#floatingBarsG').show();
+	$('.spinner-container').show();
 	$.ajax({
 		type: 'GET',
 		url:"http://50.56.206.133:9200/_search/scroll?scroll=10m&size=4&scroll_id=" + curScrollId,
@@ -69,7 +69,7 @@ function showMoreResults(){
 		         });
 		   	     ajaxOK = true;
 		   }
-		   $('#floatingBarsG').hide();
+		   $('.spinner-container').hide();
 		},
 		error: function(data){
 			console.log("Error occured: " + JSON.stringify(data));
