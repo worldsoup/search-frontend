@@ -1,10 +1,15 @@
 // scroll away address bar
 MBP.hideUrlBarOnLoad();
 MBP.startupImage();
+var boolScroll = true;
 
 function showSearch(){
-	//implement search view when search is tapped
-	setTimeout(function(){window.scrollTo(0,63)},100);
+
+    if (boolScroll) {
+		//implement search view when search is tapped
+		setTimeout(function(){window.scrollTo(0,63)},100);
+		boolScroll = false;
+	}
 	//hide the carot
 	$('.search-box').css('background', '#fff') 
 	//hide placeholder text
