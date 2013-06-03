@@ -812,6 +812,7 @@ header {
   line-height: 1;
   text-align: justify;
   margin-top: 0px;
+  padding-bottom: 1px;
 }
 .results-container .top-result .result-description:after {
   content: ' ';
@@ -902,6 +903,10 @@ header {
 .results-list-container {
   margin-top: 40px;
 }
+.results-list-container a {
+  text-decoration: none;
+  color: #231f20;
+}
 .results-list {
   height: 116px;
   position: relative;
@@ -927,6 +932,7 @@ header {
   text-overflow: ellipsis;
   font-size: .95em;
   line-height: 1;
+  padding-bottom: 1px;
 }
 .results-list hr {
   margin: 8px 0 3px 0;
