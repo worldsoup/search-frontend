@@ -49,19 +49,17 @@ $('#frmSearch').submit(function() {
 			console.log("Error occured: " + JSON.stringify(data));
 		}
 	});
-return false;
+    return false;
 });
 
 $('#frmSecondSearch').submit(function() {
-	$('#pageHome').hide();   
-	$('#pageResults').show();
 	$.ajax({
 		type: 'POST',
 		url:"http://50.56.206.133:9200/appstore/_search?scroll=10m&size=3",
 		data: JSON.stringify({
 							"query" : {
 							"multi_match" : {
-							"query" : $('#searchKeyword').val(),
+							"query" : $('#secondSearchKeyword').val(),
 							"fields" : [ "appCategory^3", "appDescription^2","appFullDescription^2","appTitle" ]
 							}
 							}
@@ -71,6 +69,7 @@ $('#frmSecondSearch').submit(function() {
 			curScrollId = parsedData._scroll_id;	
 		   //console.log(JSON.stringify(data));
 		   curHits = parsedData.hits.hits;
+		   //console.log('Length: ' + curHits.length);
 		   if (curHits.length > 0) {
 		   	dust.render("searchResult", JSON.parse(data), function(err, out) {
 		            	//console.log("out: " + out);
@@ -89,6 +88,7 @@ $('#frmSecondSearch').submit(function() {
 		   	 //hide keyboard
              $('.search-box').blur();
 		   } else {
+		   	console.log('No results');
 		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
 		   	$("#scrollSearchResults").html('');
 		   	//hide keyboard
@@ -99,7 +99,7 @@ $('#frmSecondSearch').submit(function() {
 			console.log("Error occured: " + JSON.stringify(data));
 		}
 	});
-return false;
+    return false;
 });
 
 function showMoreResults(){
