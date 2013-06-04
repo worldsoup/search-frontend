@@ -3,6 +3,8 @@ var curScrollId = 0;
 var pageHeight = $(window).height();
 
 $('#frmSearch').submit(function() {
+	$('#pageHome').hide();   
+	$('#pageResults').show();
 	$.ajax({
 		type: 'POST',
 		url:"http://50.56.206.133:9200/appstore/_search?scroll=10m&size=3",
@@ -24,7 +26,56 @@ $('#frmSearch').submit(function() {
 		            	//console.log("out: " + out);
 		            	//console.log("err: " + err);
 		            	$("#searchResults").html(out);
-		            	$("#searchResults").show();
+		            	$("#scrollSearchResults").html('');
+		            	//first results stretch to bottom of screen
+						$('.results-container').css('height', pageHeight)
+						//remove .fill when results are returned
+						$('.fill').hide()
+		            	//hide the header if results are served
+		            	$('header').hide()
+		            	window.scrollTo(1, 0);
+		            });
+		   	 ajaxOK = true;
+		   	 //hide keyboard
+             $('.search-box').blur();
+		   } else {
+		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
+		   	$("#scrollSearchResults").html('');
+		   	//hide keyboard
+            $('.search-box').blur();			
+		   }
+		},
+		error: function(data){
+			console.log("Error occured: " + JSON.stringify(data));
+		}
+	});
+return false;
+});
+
+$('#frmSecondSearch').submit(function() {
+	$('#pageHome').hide();   
+	$('#pageResults').show();
+	$.ajax({
+		type: 'POST',
+		url:"http://50.56.206.133:9200/appstore/_search?scroll=10m&size=3",
+		data: JSON.stringify({
+							"query" : {
+							"multi_match" : {
+							"query" : $('#searchKeyword').val(),
+							"fields" : [ "appCategory^3", "appDescription^2","appFullDescription^2","appTitle" ]
+							}
+							}
+							}),	
+		success: function (data) {
+			parsedData = JSON.parse(data);
+			curScrollId = parsedData._scroll_id;	
+		   //console.log(JSON.stringify(data));
+		   curHits = parsedData.hits.hits;
+		   if (curHits.length > 0) {
+		   	dust.render("searchResult", JSON.parse(data), function(err, out) {
+		            	//console.log("out: " + out);
+		            	//console.log("err: " + err);
+		            	$("#searchResults").html(out);
 		            	$("#scrollSearchResults").html('');
 		            	//first results stretch to bottom of screen
 						$('.results-container').css('height', pageHeight)
@@ -66,7 +117,6 @@ function showMoreResults(){
 		            	//console.log("out: " + out);
 		            	//console.log("err: " + err);		            	
 		            	$("#scrollSearchResults").append(out);
-		            	$("#scrollSearchResults").show();
 		         });
 		   	     ajaxOK = true;
 		   }
@@ -107,8 +157,8 @@ $('#frmLogin').submit(function() {
 			    success: function(data) { 
 			        serverdata = JSON.parse(data);
 			        if (serverdata.status == 201){
-						$('#partiallogin').hide();   
-						$('#partialSearch').show(); 
+						$('#pageLogin').hide();   
+						$('#pageHome').show();
 						setCookie('searchizobom', 'izobomhcr', 30);      
 				     } else {
 				        $('#errormessage').html('<font color="red">' + serverdata.error + '</font>') 		          
@@ -125,8 +175,8 @@ $(function() {
 	if( /Android|webOS|windows phone|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 	  checkCookie();
 	} else {
-		$('#partiallogin').hide();   
-		$('#partialNonMobile').show();
+		$('#pageLogin').hide();   
+		$('#pageDesktop').show();
 	}    
 });
 
@@ -168,7 +218,7 @@ function checkCookie()
 	var betauser=getCookie("searchizobom");
   	if (betauser!=null && betauser!="")
   	{
-  		$('#partiallogin').hide();   
-		$('#partialSearch').show();
+  		$('#pageLogin').hide();   
+		$('#pageHome').show();
   	}
 }
