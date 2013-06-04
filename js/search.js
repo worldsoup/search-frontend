@@ -29,8 +29,7 @@ $('#frmSearch').submit(function() {
 						$('.results-container').css('height', pageHeight)
 						//remove .fill when results are returned
 						$('.fill').hide()
-		            	//hide the prompt if results are served
-		            	$('.search-prompt').hide()
+		            	//hide the header if results are served
 		            	$('header').hide()
 		            	window.scrollTo(1, 0);
 		            });
