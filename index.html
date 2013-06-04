@@ -29,12 +29,19 @@
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-    <!-- First Page -->
-    <header>
-    </header>
-    <div align="center" id="partialNonMobile" style="display:none;">
+    <!-- desktop page -->
+    <div id="pageDesktop">
+     <header>
+     </header>
+     <div align="center" id="partialNonMobile" style="display:none;">
         <h3>Please access the site from a mobile device.</h3>
     </div>
+</div>
+
+<!-- login page -->
+<div id="pageLogin">
+    <header>
+    </header>
     <div class="beta-form-container"   align="center" id="partiallogin">
         <form class="beta-form" name="frmLogin" id="frmLogin" method="" action="">
             <input type="email" name="myemail" id="myemail" placeholder="email">
@@ -43,17 +50,52 @@
             <input type="submit" class="beta-button" name="Submit" value="Try Mobozi">
         </form>
     </div>
-    <div id="partialSearch" style="display:none;">
-        <div class="search-prompt">
-            <span class="prompt-text">What type of app are you looking for?</span>
+</div>
+
+<!-- results page -->
+<div class="page" id="pageResults">
+    <div class="search-prompt">
+        <span class="prompt-text">What type of app are you looking for?</span>
+    </div>
+    <div class="search-box-container">
+        <form name="frmSearch" id="frmSearch" action="" method="">
+            <input class="search-box" id="searchKeyword" type="search" placeholder="Search">
+        </form>
+    </div>
+    <div id="searchResults"></div>
+    <div id="scrollSearchResults" class="results-list-container"></div>
+    <div class="spinner-container" style="display:none;">
+        <div id="floatingBarsG">
+            <div class="blockG" id="rotateG_01">
+            </div>
+            <div class="blockG" id="rotateG_02">
+            </div>
+            <div class="blockG" id="rotateG_03">
+            </div>
+            <div class="blockG" id="rotateG_04">
+            </div>
+            <div class="blockG" id="rotateG_05">
+            </div>
+            <div class="blockG" id="rotateG_06">
+            </div>
+            <div class="blockG" id="rotateG_07">
+            </div>
+            <div class="blockG" id="rotateG_08">
+            </div>
         </div>
-        <div class="search-box-container">
-            <form name="frmSearch" id="frmSearch" action="" method="">
-                <input class="search-box" id="searchKeyword" type="search" placeholder="Search">
-            </form>
-        </div>
-        <div id="searchResults" style="display:none;"></div>
-        <div id="scrollSearchResults" class="results-list-container" style="display:none;"></div>
+    </div>
+</div>
+<!-- First Page -->
+<div class="main-page" id="pageHome">
+    <header>
+    </header>
+    <div class="search-prompt">
+        <span class="prompt-text">What type of app are you looking for?</span>
+    </div>
+    <div class="search-box-container">
+        <form name="frmSearch" id="frmSearch" action="" method="">
+            <input class="search-box" id="searchKeyword" type="search" placeholder="Search">
+        </form>
     </div>
     <div class="spinner-container" style="display:none;">
         <div id="floatingBarsG">
@@ -78,36 +120,24 @@
 
     <div class="fill">
     </div>
-    <footer>
-    <!-- <nav class="quick-pick"> 
-        <ul>
-            <li class="icon-game">Games</li>
-            <li class="icon-news">News</li>
-            <li class="icon-video">Video</li>
-            <li class="icon-music">Music</li>
-            <li class="icon-navigation">Navigation</li>
+</div>
+<!--end page conent here -->
+<script src="js/vendor/zepto.min.js"></script>    
+<script src="lib/dust/dist/dust-full-1.2.3.min.js"></script> 
+<script src="js/jquery-zepto.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/search.js"></script>
+<script src="js/main.js"></script>
+<script src="assets/templates/searchResult.js"></script>
+<script src="assets/templates/scrollSearchResult.js"></script>
 
-        </ul>
-    </nav> -->
-    </footer>
 
-        <!--end page conent here -->
-        <script src="js/vendor/zepto.min.js"></script>    
-        <script src="lib/dust/dist/dust-full-1.2.3.min.js"></script> 
-        <script src="js/jquery-zepto.js"></script>
-        <script src="js/helper.js"></script>
-        <script src="js/search.js"></script>
-        <script src="js/main.js"></script>
-        <script src="assets/templates/searchResult.js"></script>
-        <script src="assets/templates/scrollSearchResult.js"></script>
-        
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-        var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-            g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-            s.parentNode.insertBefore(g,s)}(document,"script"));
-        </script>
-    </body>
-    </html>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+</script>
+</body>
+</html>

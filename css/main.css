@@ -978,3 +978,9 @@ header {
   margin-top: 10px;
   border: 0px;
 }
+.page {
+  display: none;
+}
+.main-page {
+  display: block;
+}
