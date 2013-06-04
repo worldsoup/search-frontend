@@ -752,7 +752,7 @@ header {
 }
 .search-box-container.fixed {
   position: fixed;
-  top: 0px;
+  top: 38px;
   left: 0px;
   width: 100%;
   z-index: 999;
