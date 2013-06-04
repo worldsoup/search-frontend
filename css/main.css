@@ -829,6 +829,7 @@ header {
   display: inline-block;
   margin: 0px 0px 0px 6px;
   vertical-align: top;
+  font-size: 30px;
 }
 .results-container .top-result .result-description {
   overflow: hidden;
@@ -924,7 +925,7 @@ header {
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 38%, #ffffff 99%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0e0e0', endColorstr='#e0e0e0', GradientType=1);
 }
-.results-list-container {
+#searchResults {
   margin-top: 40px;
 }
 .results-list-container a {
@@ -946,9 +947,8 @@ header {
   display: inline-block;
   vertical-align: top;
   top: 0px;
-  left: 107px;
+  left: 74px;
   position: absolute;
-  font-size: 30px;
   line-height: 1.1em;
 }
 .results-list p {
