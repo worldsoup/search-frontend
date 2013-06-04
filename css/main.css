@@ -810,9 +810,11 @@ header {
 .quick-pick .icon-navigation {
   background: url('../img/icon-navigation.png') no-repeat center top;
 }
+#searchResults {
+  margin-top: 120px;
+}
 .results-container {
   width: 100%;
-  margin-top: 120px;
 }
 .results-container a {
   text-decoration: none;
@@ -925,7 +927,7 @@ header {
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 38%, #ffffff 99%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0e0e0', endColorstr='#e0e0e0', GradientType=1);
 }
-#searchResults {
+.results-list-container {
   margin-top: 40px;
 }
 .results-list-container a {
