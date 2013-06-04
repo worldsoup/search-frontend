@@ -25,6 +25,7 @@ $('#frmSearch').submit(function() {
 		            	//console.log("err: " + err);
 		            	$("#searchResults").html(out);
 		            	$("#searchResults").show();
+		            	$("#scrollSearchResults").html('');
 		            	//first results stretch to bottom of screen
 						$('.results-container').css('height', pageHeight)
 						//remove .fill when results are returned
@@ -38,6 +39,7 @@ $('#frmSearch').submit(function() {
              $('.search-box').blur();
 		   } else {
 		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
+		   	$("#scrollSearchResults").html('');
 		   	//hide keyboard
             $('.search-box').blur();			
 		   }
