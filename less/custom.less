@@ -13,9 +13,15 @@ header{
 	background: @black;
 	color: #ffffff;  
 	text-align: center;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 999;
 	.prompt-text{
 		line-height: 38px;  
 	}
+
 	
 } 
 .search-box-container{ 
@@ -24,6 +30,11 @@ header{
 	box-shadow: 0 1px 3px rgba(0,0,0,.8);
 	border-bottom: solid 1px #a6a5a5;
 	position: relative;
+	position: fixed;
+	top: 38px;
+	left: 0px;
+	width: 100%;
+	z-index: 999;
 
 	input{
 		background: url('../img/carot.png') no-repeat;
@@ -34,6 +45,7 @@ header{
 		font-size: 18px;
 		border: 0px;
 		padding: 0px;
+		border-radius: 0px;
 	}
 	.x-btn{
 		height: 38px;
@@ -84,6 +96,7 @@ header{
 
 .results-container{
 	width: 100%;
+	margin-top: 120px;
 	a{
 		text-decoration: none;
 		color: @black;

@@ -732,6 +732,11 @@ header {
   background: #231f20;
   color: #ffffff;
   text-align: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 999;
 }
 .search-prompt .prompt-text {
   line-height: 38px;
@@ -742,6 +747,11 @@ header {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   border-bottom: solid 1px #a6a5a5;
   position: relative;
+  position: fixed;
+  top: 38px;
+  left: 0px;
+  width: 100%;
+  z-index: 999;
 }
 .search-box-container input {
   background: url('../img/carot.png') no-repeat;
@@ -752,6 +762,7 @@ header {
   font-size: 18px;
   border: 0px;
   padding: 0px;
+  border-radius: 0px;
 }
 .search-box-container .x-btn {
   height: 38px;
@@ -797,6 +808,7 @@ header {
 }
 .results-container {
   width: 100%;
+  margin-top: 120px;
 }
 .results-container a {
   text-decoration: none;
@@ -927,11 +939,13 @@ header {
   width: 75px;
 }
 .results-list h4 {
-  margin: 6px 3px;
+  display: inline-block;
   vertical-align: top;
   top: 0px;
-  left: 74px;
+  left: 107px;
   position: absolute;
+  font-size: 30px;
+  line-height: 1.1em;
 }
 .results-list p {
   margin: 2px 7px;
