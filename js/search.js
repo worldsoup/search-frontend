@@ -120,6 +120,7 @@ $('#frmLogin').submit(function() {
 			    success: function(data) { 
 			        serverdata = JSON.parse(data);
 			        if (serverdata.status == 201){
+			        	$('#frmLogin').blur();
 						$('#pageLogin').hide();   
 						$('#pageHome').show();
 						setCookie('searchizobom', 'izobomhcr', 30); 
