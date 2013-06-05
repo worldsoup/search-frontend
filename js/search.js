@@ -3,8 +3,6 @@ var curScrollId = 0;
 var pageHeight = $(window).height();
 
 $('#frmSearch').submit(function() {
-	$('#pageHome').hide();   
-	$('#pageResults').show();
 	$.ajax({
 		type: 'POST',
 		url:"http://50.56.206.133:9200/appstore/_search?scroll=10m&size=3",
@@ -28,27 +26,27 @@ $('#frmSearch').submit(function() {
 		            	$("#searchResults").html(out);
 		            	$("#scrollSearchResults").html('');
 		            	//first results stretch to bottom of screen
-						$('.results-container').css('height', pageHeight)
+						$('.results-container').css('height', pageHeight);
 						//remove .fill when results are returned
-						$('.fill').hide()
+						$('.fill').hide();
 		            	//hide the header if results are served
-		            	$('header').hide()
+		            	$('header').hide();
 		            	window.scrollTo(1, 0);
 		            });
 		   	 ajaxOK = true;
-		   	 //hide keyboard
-             $('.search-box').blur();
 		   } else {
 		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
-		   	$("#scrollSearchResults").html('');
-		   	//hide keyboard
-            $('.search-box').blur();			
+		   	$("#scrollSearchResults").html('');	
 		   }
 		},
 		error: function(data){
 			console.log("Error occured: " + JSON.stringify(data));
 		}
 	});
+    //hide keyboard
+    $('#searchKeyword').blur();
+	$('#pageHome').hide();   
+	$('#pageResults').show();
     return false;
 });
 
@@ -77,28 +75,26 @@ $('#frmSecondSearch').submit(function() {
 		            	$("#searchResults").html(out);
 		            	$("#scrollSearchResults").html('');
 		            	//first results stretch to bottom of screen
-						$('.results-container').css('height', pageHeight)
+						$('.results-container').css('height', pageHeight);
 						//remove .fill when results are returned
-						$('.fill').hide()
+						$('.fill').hide();
 		            	//hide the header if results are served
-		            	$('header').hide()
+		            	$('header').hide();
 		            	window.scrollTo(1, 0);
 		            });
 		   	 ajaxOK = true;
-		   	 //hide keyboard
-             $('.search-box').blur();
 		   } else {
 		   	console.log('No results');
 		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
-		   	$("#scrollSearchResults").html('');
-		   	//hide keyboard
-            $('.search-box').blur();			
+		   	$("#scrollSearchResults").html('');			
 		   }
 		},
 		error: function(data){
 			console.log("Error occured: " + JSON.stringify(data));
 		}
 	});
+	//hide keyboard
+    $('#secondSearchKeyword').blur();
     return false;
 });
 
@@ -159,7 +155,8 @@ $('#frmLogin').submit(function() {
 			        if (serverdata.status == 201){
 						$('#pageLogin').hide();   
 						$('#pageHome').show();
-						setCookie('searchizobom', 'izobomhcr', 30);      
+						setCookie('searchizobom', 'izobomhcr', 30); 
+						window.scrollTo(1, 0);     
 				     } else {
 				        $('#errormessage').html('<font color="red">' + serverdata.error + '</font>') 		          
 				    }                       
@@ -220,5 +217,6 @@ function checkCookie()
   	{
   		$('#pageLogin').hide();   
 		$('#pageHome').show();
+		window.scrollTo(1, 0);
   	}
 }
