@@ -829,6 +829,8 @@ header {
   margin: 0px 0px 0px 6px;
   vertical-align: top;
   font-size: 30px;
+  position: absolute;
+  top: 0px;
 }
 .results-container .top-result .result-description {
   overflow: hidden;
