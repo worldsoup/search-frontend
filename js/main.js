@@ -42,6 +42,13 @@ $('.x-btn').hide(function() {
 })
 }
 
+function barTop(){
+	$('.search-prompt').css('top', '0')
+}
+
+$('#secondSearchKeyword') .focus(function(){
+	barTop() 
+}) 
 // $('.search-box') .blur(function(){
 // 	hideSearch()
 // }) 
