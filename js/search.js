@@ -3,46 +3,7 @@ var curScrollId = 0;
 var pageHeight = $(window).height();
 
 $('#frmSearch').submit(function() {
-	$.ajax({
-		type: 'POST',
-		url:"http://50.56.206.133:9200/appstore/_search?scroll=10m&size=3",
-		data: JSON.stringify({
-							"query" : {
-							"multi_match" : {
-							"query" : $('#searchKeyword').val(),
-							"fields" : [ "appCategory^3", "appDescription^2","appFullDescription^2","appTitle" ]
-							}
-							}
-							}),	
-		success: function (data) {
-			parsedData = JSON.parse(data);
-			curScrollId = parsedData._scroll_id;	
-		   //console.log(JSON.stringify(data));
-		   curHits = parsedData.hits.hits;
-		   if (curHits.length > 0) {
-		   	dust.render("searchResult", JSON.parse(data), function(err, out) {
-		            	//console.log("out: " + out);
-		            	//console.log("err: " + err);
-		            	$("#searchResults").html(out);
-		            	$("#scrollSearchResults").html('');
-		            	//first results stretch to bottom of screen
-						$('.results-container').css('height', pageHeight);
-						//remove .fill when results are returned
-						$('.fill').hide();
-		            	//hide the header if results are served
-		            	$('header').hide();
-		            	window.scrollTo(1, 0);
-		            });
-		   	 ajaxOK = true;
-		   } else {
-		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
-		   	$("#scrollSearchResults").html('');	
-		   }
-		},
-		error: function(data){
-			console.log("Error occured: " + JSON.stringify(data));
-		}
-	});
+	getResults($('#searchKeyword').val());
     //hide keyboard
     $('#searchKeyword').blur();
 	$('#pageHome').hide();   
@@ -51,13 +12,20 @@ $('#frmSearch').submit(function() {
 });
 
 $('#frmSecondSearch').submit(function() {
+	getResults($('#secondSearchKeyword').val());
+	//hide keyboard
+    $('#secondSearchKeyword').blur();
+    return false;
+});
+
+function getResults(searchKeyword){
 	$.ajax({
 		type: 'POST',
 		url:"http://50.56.206.133:9200/appstore/_search?scroll=10m&size=3",
 		data: JSON.stringify({
 							"query" : {
 							"multi_match" : {
-							"query" : $('#secondSearchKeyword').val(),
+							"query" : searchKeyword,
 							"fields" : [ "appCategory^3", "appDescription^2","appFullDescription^2","appTitle" ]
 							}
 							}
@@ -84,19 +52,18 @@ $('#frmSecondSearch').submit(function() {
 		            });
 		   	 ajaxOK = true;
 		   } else {
-		   	console.log('No results');
+		   	//console.log('No results');
 		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
 		   	$("#scrollSearchResults").html('');			
 		   }
 		},
 		error: function(data){
-			console.log("Error occured: " + JSON.stringify(data));
+			//console.log("Error occured: " + JSON.stringify(data));
+			$("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");
+		   	$("#scrollSearchResults").html('');	
 		}
 	});
-	//hide keyboard
-    $('#secondSearchKeyword').blur();
-    return false;
-});
+}
 
 function showMoreResults(){
 	$('.spinner-container').show();
