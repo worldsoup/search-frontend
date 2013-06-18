@@ -4,10 +4,12 @@ var pageHeight = $(window).height();
 
 $('#frmSearch').submit(function() {
 	getResults($('#searchKeyword').val());
+	$searchKeyword = $('#searchKeyword').val();
     //hide keyboard
     $('#searchKeyword').blur();
 	$('#pageHome').hide();   
 	$('#pageResults').show();
+	$('#secondSearchKeyword').val($searchKeyword);
     return false;
 });
 
@@ -18,6 +20,51 @@ $('#frmSecondSearch').submit(function() {
     return false;
 });
 
+function getResults(searchKeyword){
+	$.ajax({
+		type: 'GET',
+		url:"//api.mobozi.com/v1/searchs/" + searchKeyword,	
+		success: function(data) { 
+	        serverdata = JSON.parse(data);
+			if (serverdata.status == 201){
+		            parsedData = serverdata.result;
+					curScrollId = parsedData._scroll_id;	
+				   //console.log(JSON.stringify(data));
+				   curHits = parsedData.hits.hits;
+				   //console.log('Length: ' + curHits.length);
+				   if (curHits.length > 0) {
+				   	    dust.render("searchResult", serverdata.result, function(err, out) {
+				            	//console.log("out: " + out);
+				            	//console.log("err: " + err);
+				            	$("#searchResults").html(out);
+				            	$("#scrollSearchResults").html('');
+				            	//first results stretch to bottom of screen
+								$('.results-container').css('height', pageHeight);
+								//remove .fill when results are returned
+								$('.fill').hide();
+				            	//hide the header if results are served
+				            	$('header').hide();
+				            	window.scrollTo(1, 0);
+				        });
+				   	    ajaxOK = true;
+				   } else {
+				   	//console.log('No results');
+				   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
+				   	$("#scrollSearchResults").html('');			
+				   }    
+		     } else {
+		        	$("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");
+		   	        $("#scrollSearchResults").html('');			          
+		    }                       
+	    },
+		error: function(jqXHR, textStatus, errorThrown){
+		        $("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");
+		   	    $("#scrollSearchResults").html('');	
+		}
+	});
+}
+
+/*
 function getResults(searchKeyword){
 	$.ajax({
 		type: 'POST',
@@ -64,7 +111,39 @@ function getResults(searchKeyword){
 		}
 	});
 }
+*/
 
+function showMoreResults(){
+	$('.spinner-container').show();
+	$.ajax({
+		type: 'GET',
+		url:"//api.mobozi.com/v1/scrollsearchs/" + curScrollId,	
+		success: function(data) { 
+	        serverdata = JSON.parse(data);
+			if (serverdata.status == 201){
+		            parsedData = serverdata.result;
+				   curHits = parsedData.hits.hits;
+				   //console.log('Length: ' + curHits.length);
+				   if (curHits.length > 0) {
+						dust.render("scrollSearchResult", serverdata.result, function(err, out) {	            	
+			            	$("#scrollSearchResults").append(out);
+				        });
+				   	    ajaxOK = true;
+				   } 
+				   $('.spinner-container').hide(); 
+		     } else {
+		        	console.log("Error occured: " + serverdata.error);	
+		        	$('.spinner-container').hide();	          
+		    }                       
+	    },
+		error: function(jqXHR, textStatus, errorThrown){
+		        console.log("Error occured: " + serverdata.error);
+		        $('.spinner-container').hide();
+		}
+	});
+}
+
+/*
 function showMoreResults(){
 	$('.spinner-container').show();
 	$.ajax({
@@ -90,6 +169,8 @@ function showMoreResults(){
 		}
 	});
 }
+
+*/
 
 /*
 $('#searchResults').swipeUp(function(){

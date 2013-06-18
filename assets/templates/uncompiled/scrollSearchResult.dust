@@ -2,7 +2,7 @@
 	{#hits}
 		{#hits}
 			{#_source} 
-			 <a href="{#appStores}{Web}{/appStores}">
+			 <a href="{appUrl}">
 				<div class="results-list">				 
 					<img class="inline" src="{appImages[0]}"/>
 					<h4 class="inline">{appTitle}</h4>

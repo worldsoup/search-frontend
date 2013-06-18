@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Submit URL for indexing</title>
+</head>
+<body>
+	<div>
+		<br><br><b>Submit URL for indexing</b><br><br>
+	</div>
+	<div id="confirmMessage"></div>
+	<div>
+	  <form name="frmIndexApp" id="frmIndexApp" method="post" action="">
+	  	URL: <input type="url" name="indexURL" id="indexURL" size="50"> <br><br>
+	  	Categories: <input type="text" name="categories" id="categories" size="50"><br><br>
+	  	<input type="submit" value="Submit">
+	  </form>
+	</div>
+	<script src="js/vendor/zepto.min.js"></script> 
+	<script type="text/javascript">
+		$('#frmIndexApp').submit(function() {
+			$.ajax({
+				type: 'POST',
+				url:"//api.mobozi.com/v1/submitindex",
+				data: $('form').serialize(),
+				success: function(data) { 
+			        serverdata = JSON.parse(data);
+			        if (serverdata.status == 201){
+			        	$('#frmIndexApp')[0].reset();
+						$('#confirmMessage').html('<font color="green">Submission successful.</font>') 
+				     } else {
+				        $('#confirmMessage').html('<font color="red">' + serverdata.error + '</font>') 		          
+				    }                       
+			    },
+				error: function(jqXHR, textStatus, errorThrown){
+				        $('#confirmMessage').html('<font color="red"> Error: ' + textStatus + '</font>') 
+				}
+			});		   
+		    return false;
+		});
+	</script>
+</body>
+</html>
