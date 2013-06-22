@@ -33,11 +33,10 @@ function getResults(searchKeyword){
 				   curHits = parsedData.hits.hits;
 				   //console.log('Length: ' + curHits.length);
 				   if (curHits.length > 0) {
-				   	    dust.render("searchResult", serverdata.result, function(err, out) {
+				   	    dust.render("scrollSearchResult", serverdata.result, function(err, out) {
 				            	//console.log("out: " + out);
 				            	//console.log("err: " + err);
 				            	$("#searchResults").html(out);
-				            	$("#scrollSearchResults").html('');
 				            	//first results stretch to bottom of screen
 								$('.results-container').css('height', pageHeight);
 								//remove .fill when results are returned
@@ -49,69 +48,17 @@ function getResults(searchKeyword){
 				   	    ajaxOK = true;
 				   } else {
 				   	//console.log('No results');
-				   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
-				   	$("#scrollSearchResults").html('');			
+				   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');		
 				   }    
 		     } else {
-		        	$("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");
-		   	        $("#scrollSearchResults").html('');			          
+		        	$("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");		          
 		    }                       
 	    },
 		error: function(jqXHR, textStatus, errorThrown){
 		        $("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");
-		   	    $("#scrollSearchResults").html('');	
 		}
 	});
 }
-
-/*
-function getResults(searchKeyword){
-	$.ajax({
-		type: 'POST',
-		url:"http://50.56.206.133:9200/appstore/_search?scroll=10m&size=3",
-		data: JSON.stringify({
-							"query" : {
-							"multi_match" : {
-							"query" : searchKeyword,
-							"fields" : [ "appCategory^3", "appDescription^2","appFullDescription^2","appTitle" ]
-							}
-							}
-							}),	
-		success: function (data) {
-			parsedData = JSON.parse(data);
-			curScrollId = parsedData._scroll_id;	
-		   //console.log(JSON.stringify(data));
-		   curHits = parsedData.hits.hits;
-		   //console.log('Length: ' + curHits.length);
-		   if (curHits.length > 0) {
-		   	dust.render("searchResult", JSON.parse(data), function(err, out) {
-		            	//console.log("out: " + out);
-		            	//console.log("err: " + err);
-		            	$("#searchResults").html(out);
-		            	$("#scrollSearchResults").html('');
-		            	//first results stretch to bottom of screen
-						$('.results-container').css('height', pageHeight);
-						//remove .fill when results are returned
-						$('.fill').hide();
-		            	//hide the header if results are served
-		            	$('header').hide();
-		            	window.scrollTo(1, 0);
-		            });
-		   	 ajaxOK = true;
-		   } else {
-		   	//console.log('No results');
-		   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');
-		   	$("#scrollSearchResults").html('');			
-		   }
-		},
-		error: function(data){
-			//console.log("Error occured: " + JSON.stringify(data));
-			$("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");
-		   	$("#scrollSearchResults").html('');	
-		}
-	});
-}
-*/
 
 function showMoreResults(){
 	$('.spinner-container').show();
@@ -126,7 +73,7 @@ function showMoreResults(){
 				   //console.log('Length: ' + curHits.length);
 				   if (curHits.length > 0) {
 						dust.render("scrollSearchResult", serverdata.result, function(err, out) {	            	
-			            	$("#scrollSearchResults").append(out);
+			            	$("#searchResults").append(out);
 				        });
 				   	    ajaxOK = true;
 				   } 
@@ -142,35 +89,6 @@ function showMoreResults(){
 		}
 	});
 }
-
-/*
-function showMoreResults(){
-	$('.spinner-container').show();
-	$.ajax({
-		type: 'GET',
-		url:"http://50.56.206.133:9200/_search/scroll?scroll=10m&size=4&scroll_id=" + curScrollId,
-		success: function (data) {
-		   //console.log(JSON.stringify(data));
-		   parsedData = JSON.parse(data);
-		   curHits = parsedData.hits.hits;
-		   //console.log(curHits.length);
-		   if (curHits.length > 0) {
-		   		dust.render("scrollSearchResult", JSON.parse(data), function(err, out) {
-		            	//console.log("out: " + out);
-		            	//console.log("err: " + err);		            	
-		            	$("#scrollSearchResults").append(out);
-		         });
-		   	     ajaxOK = true;
-		   }
-		   $('.spinner-container').hide();
-		},
-		error: function(data){
-			console.log("Error occured: " + JSON.stringify(data));
-		}
-	});
-}
-
-*/
 
 /*
 $('#searchResults').swipeUp(function(){
