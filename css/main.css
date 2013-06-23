@@ -718,6 +718,14 @@ body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
 }
+.btn {
+  padding: 10px 14px;
+  background: #f04929;
+  display: inline-block;
+  text-align: center;
+  color: #ffffff;
+  font-weight: heavy;
+}
 .fill {
   background: url('../img/logo-shadow.png') no-repeat center center;
   height: 100%;
@@ -945,21 +953,23 @@ header {
   width: 75px;
 }
 .results-list h4 {
-  display: inline-block;
-  vertical-align: top;
-  top: 0px;
-  left: 74px;
-  position: absolute;
+  display: block;
   line-height: 1.1em;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 .results-list p {
-  margin: 2px 7px;
+  margin: 4px 7px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: .95em;
   line-height: 1;
   padding-bottom: 1px;
+}
+.results-list .btn {
+  margin: 5px 20px;
+  width: 150px;
 }
 .results-list hr {
   margin: 8px 0 3px 0;

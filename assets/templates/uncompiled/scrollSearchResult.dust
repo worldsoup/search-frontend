@@ -2,13 +2,13 @@
 	{#hits}
 		{#hits}
 			{#_source} 
-			 <a href="{appUrl}">
+			 
 				<div class="results-list">				 
 					<img class="inline" src="{appImages[0]} {^appImages[0]} {appImages[1]} {/appImages[0]}" height="70"/>
-					<h4 class="inline">&nbsp;&nbsp;{appTitle}</h4>
-					<p>{appDescription}{^appDescription} {appFullDescription} {/appDescription}</p>					
+					<a href="{appUrl}"><div class="btn">Go To App</div></a>	
+					<h4 class="">&nbsp;&nbsp;{appTitle}</h4>
+					<p>{appDescription}{^appDescription} {appFullDescription} {/appDescription}</p>	
 				</div>
-				 </a>
 				 <hr>
 			{/_source} 
 			{:else}<p>No results found.</p>
