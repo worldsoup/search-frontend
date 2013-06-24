@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Mobozi -- Mobile Discovery Engine</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+    <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#222222">
+
+    <!-- For iOS web apps -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+    -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <!-- desktop page -->
+    <div class="page"  id="pageDesktop">
+     <header>
+     </header>
+     <div align="center">
+        <h3>Please access the site from a mobile device.</h3>
+    </div>
+</div>
+
+<!-- login page -->
+<div class="main-page" id="pageLogin">
+    <header>
+    </header>
+    <div class="beta-form-container"   align="center" id="partiallogin">
+        <form class="beta-form" name="frmLogin" id="frmLogin" method="post" action="">
+            <input type="email" name="myemail" id="myemail" placeholder="email">
+            <input type="password" name="mypassword" id="mypassword" placeholder="access code">
+            <div id="errormessage"></div>
+            <input type="submit" class="beta-button" name="Submit" value="Try Mobozi">
+        </form>
+    </div>
+     <div class="fill">
+    </div>
+</div>
+
+<!-- results page -->
+<div class="page" id="pageResults">
+    <div class="search-prompt">
+        <span class="prompt-text">What type of app are you looking for?</span>
+    </div>
+    <div class="search-box-container">
+        <form name="frmSecondSearch" id="frmSecondSearch" action="" method="post">
+            <input class="search-box" id="secondSearchKeyword" type="search" placeholder="Search">
+        </form>
+    </div>
+    <div id="searchResults" class="results-list-container"></div>
+    <div class="spinner-container" style="display:none;">
+        <div id="floatingBarsG">
+            <div class="blockG" id="rotateG_01">
+            </div>
+            <div class="blockG" id="rotateG_02">
+            </div>
+            <div class="blockG" id="rotateG_03">
+            </div>
+            <div class="blockG" id="rotateG_04">
+            </div>
+            <div class="blockG" id="rotateG_05">
+            </div>
+            <div class="blockG" id="rotateG_06">
+            </div>
+            <div class="blockG" id="rotateG_07">
+            </div>
+            <div class="blockG" id="rotateG_08">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- First Page -->
+<div class="page"  id="pageHome">
+    <header>
+    </header>
+    <div class="search-prompt">
+        <span class="prompt-text">What type of app are you looking for?</span>
+    </div>
+    <div class="search-box-container">
+        <form name="frmSearch" id="frmSearch" action="" method="post">
+            <input class="search-box" id="searchKeyword" type="search" placeholder="Search">
+        </form>
+    </div>
+    <div class="spinner-container" style="display:none;">
+        <div id="floatingBarsG">
+            <div class="blockG" id="rotateG_01">
+            </div>
+            <div class="blockG" id="rotateG_02">
+            </div>
+            <div class="blockG" id="rotateG_03">
+            </div>
+            <div class="blockG" id="rotateG_04">
+            </div>
+            <div class="blockG" id="rotateG_05">
+            </div>
+            <div class="blockG" id="rotateG_06">
+            </div>
+            <div class="blockG" id="rotateG_07">
+            </div>
+            <div class="blockG" id="rotateG_08">
+            </div>
+        </div>
+    </div>
+
+    <div class="fill">
+    </div>
+</div>
+<!--end page conent here -->
+<script src="js/vendor/zepto.min.js"></script>    
+<script src="lib/dust/dist/dust-full-1.2.3.min.js"></script> 
+<script src="js/jquery-zepto.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/vice-search.js"></script>
+<script src="js/main.js"></script>
+<script src="assets/templates/searchResult.js"></script>
+<script src="assets/templates/scrollSearchResult.js"></script>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+var _gaq=[["_setAccount","UA-35006728-2"],["_trackPageview"]];
+_gaq.push(['_setDomainName', 'mobozi.com']);
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+</script>
+</body>
+</html>
