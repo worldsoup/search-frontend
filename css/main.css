@@ -726,6 +726,11 @@ body {
   color: #ffffff;
   font-weight: heavy;
 }
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background: #d72f0f;
+}
 .fill {
   background: url('../img/logo-shadow.png') no-repeat center center;
   height: 100%;
@@ -944,6 +949,7 @@ header {
 .results-list {
   height: 116px;
   position: relative;
+  padding: 6px;
 }
 .results-list a {
   text-decoration: none;
@@ -955,17 +961,16 @@ header {
 .results-list h4 {
   display: block;
   line-height: 1.1em;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin: 4px 0px;
 }
 .results-list p {
-  margin: 4px 7px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: .95em;
   line-height: 1;
   padding-bottom: 1px;
+  margin: 0 0 0 6px;
 }
 .results-list .btn {
   margin: 5px 20px;
