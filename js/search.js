@@ -137,7 +137,10 @@ return false;
 
 $(function() {
 	if( /Android|webOS|windows phone|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-	  checkCookie();
+	  //checkCookie();
+	  $('#pageLogin').hide();   
+	  $('#pageHome').show();
+	  window.scrollTo(1, 0);
 	} else {
 		$('#pageLogin').hide();   
 		$('#pageDesktop').show();
