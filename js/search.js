@@ -111,82 +111,83 @@ $(window).bind('scroll', function () {
 		}
 	});
 
-$('#frmLogin').submit(function() {
-	$.ajax({
-		type: 'POST',
-		url:"//api.mobozi.com/v1/searchlogin",
-		data: $('form').serialize(),	
-			    success: function(data) { 
-			        serverdata = JSON.parse(data);
-			        if (serverdata.status == 201){
-			        	$('#frmLogin').blur();
-						$('#pageLogin').hide();   
-						$('#pageHome').show();
-						setCookie('searchizobom', 'izobomhcr', 30); 
-						window.scrollTo(1, 0);     
-				     } else {
-				        $('#errormessage').html('<font color="red">' + serverdata.error + '</font>') 		          
-				    }                       
-			    },
-				error: function(jqXHR, textStatus, errorThrown){
-				        $('#errormessage').html('<font color="red"> Error: ' + textStatus + '</font>') 
-				}
-	});
-return false;
-});
+// $('#frmLogin').submit(function() {
+// 	$.ajax({
+// 		type: 'POST',
+// 		url:"//api.mobozi.com/v1/searchlogin",
+// 		data: $('form').serialize(),	
+// 			    success: function(data) { 
+// 			        serverdata = JSON.parse(data);
+// 			        if (serverdata.status == 201){
+// 			        	$('#frmLogin').blur();
+// 						$('#pageLogin').hide();   
+// 						$('#pageHome').show();
+// 						setCookie('searchizobom', 'izobomhcr', 30); 
+// 						window.scrollTo(1, 0);     
+// 				     } else {
+// 				        $('#errormessage').html('<font color="red">' + serverdata.error + '</font>') 		          
+// 				    }                       
+// 			    },
+// 				error: function(jqXHR, textStatus, errorThrown){
+// 				        $('#errormessage').html('<font color="red"> Error: ' + textStatus + '</font>') 
+// 				}
+// 	});
+// return false;
+// });
+//added this so I can see the app
+$('#pageHome').show();
+// $(function() {
+// 	if( /Android|webOS|windows phone|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+// 	  //checkCookie();
+// 	  $('#pageLogin').hide();   
+// 	  $('#pageHome').show();
+// 	  window.scrollTo(1, 0);
+// 	} else {
+// 		$('#pageLogin').hide();   
+// 		$('#pageDesktop').show();
+// 	}    
+// });
 
-$(function() {
-	if( /Android|webOS|windows phone|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-	  //checkCookie();
-	  $('#pageLogin').hide();   
-	  $('#pageHome').show();
-	  window.scrollTo(1, 0);
-	} else {
-		$('#pageLogin').hide();   
-		$('#pageDesktop').show();
-	}    
-});
+// function setCookie(c_name,value,exdays)
+// {
+// 	var exdate=new Date();
+// 	exdate.setDate(exdate.getDate() + exdays);
+// 	var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+// 	document.cookie=c_name + "=" + c_value;
+// }
 
-function setCookie(c_name,value,exdays)
-{
-	var exdate=new Date();
-	exdate.setDate(exdate.getDate() + exdays);
-	var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-	document.cookie=c_name + "=" + c_value;
-}
+// function getCookie(c_name)
+// {
+// 	var c_value = document.cookie;
+// 	var c_start = c_value.indexOf(" " + c_name + "=");
+// 	if (c_start == -1)
+// 	 {
+// 	  	c_start = c_value.indexOf(c_name + "=");
+// 	 }
+// 	if (c_start == -1)
+// 	{
+// 	  c_value = null;
+// 	}
+// 	else$('#pageHome').show();
+// 	{
+// 	  c_start = c_value.indexOf("=", c_start) + 1;
+// 	  var c_end = c_value.indexOf(";", c_start);
+// 	  if (c_end == -1)
+// 	  {
+// 		c_end = c_value.length;
+// 	  }
+// 	  c_value = unescape(c_value.substring(c_start,c_end));
+// 	}
+// 	return c_value;
+// }
 
-function getCookie(c_name)
-{
-	var c_value = document.cookie;
-	var c_start = c_value.indexOf(" " + c_name + "=");
-	if (c_start == -1)
-	 {
-	  	c_start = c_value.indexOf(c_name + "=");
-	 }
-	if (c_start == -1)
-	{
-	  c_value = null;
-	}
-	else
-	{
-	  c_start = c_value.indexOf("=", c_start) + 1;
-	  var c_end = c_value.indexOf(";", c_start);
-	  if (c_end == -1)
-	  {
-		c_end = c_value.length;
-	  }
-	  c_value = unescape(c_value.substring(c_start,c_end));
-	}
-	return c_value;
-}
-
-function checkCookie()
-{
-	var betauser=getCookie("searchizobom");
-  	if (betauser!=null && betauser!="")
-  	{
-  		$('#pageLogin').hide();   
-		$('#pageHome').show();
-		window.scrollTo(1, 0);
-  	}
-}
+// function checkCookie()
+// {
+// 	var betauser=getCookie("searchizobom");
+//   	if (betauser!=null && betauser!="")
+//   	{
+//   		$('#pageLogin').hide();   
+// 		
+// 		window.scrollTo(1, 0);
+//   	}
+// }
