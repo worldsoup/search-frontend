@@ -31,9 +31,9 @@
 <body>
     <!-- desktop page -->
     <div class="page"  id="pageDesktop">
-     <header>
-     </header>
-     <div align="center">
+       <header>
+       </header>
+       <div align="center">
         <h3>Please access the site from a mobile device.</h3>
     </div>
 </div>
@@ -56,6 +56,7 @@
 
 <!-- results page -->
 <div class="page" id="pageResults">
+    <div class="alert">Mobozi is a search engine for mobile web apps, it is best utilized on your mobile device!</div>
     <div class="search-prompt">
         <span class="prompt-text">What type of app are you looking for?</span>
     </div>
@@ -64,7 +65,9 @@
             <input class="search-box" id="secondSearchKeyword" type="search" placeholder="Search">
         </form>
     </div>
-    <div id="searchResults" class="results-list-container"></div>
+    <div class="results-container">
+        <div id="searchResults" class="results-list-container"></div>
+    </div>
     <div class="spinner-container" style="display:none;">
         <div id="floatingBarsG">
             <div class="blockG" id="rotateG_01">
@@ -88,6 +91,7 @@
 </div>
 <!-- First Page -->
 <div class="page"  id="pageHome">
+    <div class="alert">Mobozi is a search engine for mobile web apps, it is best utilized on your mobile device!</div>
     <header>
     </header>
     <div class="search-prompt">
@@ -135,16 +139,16 @@
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-35006728-2']);
-  _gaq.push(['_setDomainName', 'mobozi.com']);
-  _gaq.push(['_trackPageview']);
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-35006728-2']);
+_gaq.push(['_setDomainName', 'mobozi.com']);
+_gaq.push(['_trackPageview']);
 
-  (function() {
+(function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+})();
 </script>
 </body>
 </html>

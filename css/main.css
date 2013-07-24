@@ -54,6 +54,8 @@ html {
   /* 1 */
 
   -webkit-text-size-adjust: 100%;
+  /* 2 */
+
   -ms-text-size-adjust: 100%;
   /* 2 */
 
@@ -823,8 +825,13 @@ header {
 .quick-pick .icon-navigation {
   background: url('../img/icon-navigation.png') no-repeat center top;
 }
-.results-container {
-  width: 100%;
+.alert {
+  background: #ea3f33;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px;
+  display: none;
 }
 .results-container a {
   text-decoration: none;
@@ -1003,4 +1010,15 @@ header {
 }
 .main-page {
   display: block;
+}
+/* Tablets and bigger ----------- */
+@media only screen and (min-width: 768px) {
+  /* Styles */
+  .results-container {
+    width: 400px;
+    margin: 0 auto;
+  }
+  .alert {
+    display: block;
+  }
 }
