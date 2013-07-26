@@ -7,7 +7,9 @@ function showSearch(){
 
     if (boolScroll) {
 		//implement search view when search is tapped
-		setTimeout(function(){window.scrollTo(0,63)},100);
+		//setTimeout(function(){window.scrollTo(0,63)},100);
+		setTimeout(function(){document.getElementById('focusSearchPrompt').scrollIntoView();},100);
+		
 		boolScroll = false;
 	}
 	//hide the carot

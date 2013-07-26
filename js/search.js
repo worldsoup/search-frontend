@@ -21,43 +21,48 @@ $('#frmSecondSearch').submit(function() {
 });
 
 function getResults(searchKeyword){
-	$.ajax({
-		type: 'GET',
-		url:"//api.mobozi.com/v1/searchs/" + searchKeyword,	
-		success: function(data) { 
-	        serverdata = JSON.parse(data);
-			if (serverdata.status == 201){
-		            parsedData = serverdata.result;
-					curScrollId = parsedData._scroll_id;	
-				   //console.log(JSON.stringify(data));
-				   curHits = parsedData.hits.hits;
-				   //console.log('Length: ' + curHits.length);
-				   if (curHits.length > 0) {
-				   	    dust.render("scrollSearchResult", serverdata.result, function(err, out) {
-				            	//console.log("out: " + out);
-				            	//console.log("err: " + err);
-				            	$("#searchResults").html(out);
-				            	//first results stretch to bottom of screen
-								$('.results-container').css('height', pageHeight);
-								//remove .fill when results are returned
-								$('.fill').hide();
-				            	//hide the header if results are served
-				            	$('header').hide();
-				            	window.scrollTo(1, 0);
-				        });
-				   	    ajaxOK = true;
-				   } else {
-				   	//console.log('No results');
-				   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');		
-				   }    
-		     } else {
-		        	$("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");		          
-		    }                       
-	    },
-		error: function(jqXHR, textStatus, errorThrown){
-		        $("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");
-		}
-	});
+	if (searchKeyword != ''){
+		$.ajax({
+			type: 'GET',
+			url:"//api.mobozi.com/v1/searchs/" + searchKeyword,	
+			success: function(data) { 
+		        serverdata = JSON.parse(data);
+				if (serverdata.status == 201){
+			            parsedData = serverdata.result;
+						curScrollId = parsedData._scroll_id;	
+					   //console.log(JSON.stringify(data));
+					   curHits = parsedData.hits.hits;
+					   //console.log('Length: ' + curHits.length);
+					   if (curHits.length > 0) {
+					   	    dust.render("scrollSearchResult", serverdata.result, function(err, out) {
+					            	//console.log("out: " + out);
+					            	//console.log("err: " + err);
+					            	$("#searchResults").html(out);
+					            	//first results stretch to bottom of screen
+									$('.results-container').css('height', pageHeight);
+									//remove .fill when results are returned
+									$('.fill').hide();
+					            	//hide the header if results are served
+					            	$('header').hide();
+					            	//window.scrollTo(1, 0);
+					            	document.getElementById('focusSearchPrompt2').scrollIntoView();
+					        });
+					   	    ajaxOK = true;
+					   } else {
+					   	//console.log('No results');
+					   	$("#searchResults").html('<p><b>&nbsp;&nbsp; No results found</b></p>');		
+					   }    
+			     } else {
+			        	$("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");		          
+			    }                       
+		    },
+			error: function(jqXHR, textStatus, errorThrown){
+			        $("#searchResults").html("<p><b>&nbsp;&nbsp; Sorry, can't contact server. Please try again later.</b></p>");
+			}
+		});
+    } else {
+    	$("#searchResults").html("<p><b>&nbsp;&nbsp; Please enter a keyword to search.</b></p>");
+    }
 }
 
 function showMoreResults(){
